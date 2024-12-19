@@ -1,4 +1,3 @@
-#42Exercise
 
 >[!info] Manual
 > **strdup** duplicates a string by allocating memory for a new copy, copying the content of the original string, and appending a null terminator (\0). It returns a pointer to the new string or NULL if memory allocation fails.

@@ -1,4 +1,6 @@
-#42Exercise
+---
+tags: []
+---
 
 >[!info] Manual
 > **ft_split** is a function that splits a string into an array of substrings based on a specified delimiter character. It allocates memory dynamically for each substring and the array, ensuring the result is null-terminated.
