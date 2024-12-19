@@ -1,0 +1,5 @@
+# This directory is a Syncthing folder marker.
+# Do not delete.
+
+folderID: zcjor-gvics
+created: 2024-12-19T05:30:03+01:00

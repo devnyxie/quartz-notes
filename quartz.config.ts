@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "🪴 Quartz 4.0",
+    pageTitle: "🪴 Tim's Notes",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
@@ -16,8 +16,8 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "en-US",
-    baseUrl: "quartz.jzhao.xyz",
-    ignorePatterns: ["private", "templates", ".obsidian"],
+    baseUrl: "devnyxie.com",
+    ignorePatterns: ["private", "templates", ".obsidian", "Excalidraw"],
     defaultDateType: "created",
     generateSocialImages: false,
     theme: {
@@ -62,8 +62,8 @@ const config: QuartzConfig = {
       }),
       Plugin.SyntaxHighlighting({
         theme: {
-          light: "github-light",
-          dark: "github-dark",
+          light: "light-plus",
+          dark: "dark-plus",
         },
         keepBackground: false,
       }),
