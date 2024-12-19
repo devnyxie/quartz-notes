@@ -1,3 +1,6 @@
+---
+tags: libft
+---
 
 >[!info] Manual
 > - **malloc**: Allocates memory, but leaves it uninitialized (contains garbage values). You must manually initialize the memory before use to avoid errors. 
