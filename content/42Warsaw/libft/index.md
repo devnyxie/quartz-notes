@@ -1,3 +1,7 @@
+---
+title: Libft
+---
+
 | Function Name | Short Description |
 |--------------|-------------------|
 | ft_isalpha | Checks if character is alphabetic |
