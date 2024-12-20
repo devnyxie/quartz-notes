@@ -8,9 +8,9 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/devnyxie",
-      "Resume": "https://devnyxie.notion.site/resume",
-      "Portfolio": "https://devnyxie.com",
+      // GitHub: "https://github.com/devnyxie",
+      // "Resume": "https://devnyxie.notion.site/resume",
+      // "Portfolio": "https://devnyxie.com",
     },
   }),
 }
@@ -20,7 +20,7 @@ export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
     Component.Breadcrumbs(),
     Component.ArticleTitle(),
-    // Component.ContentMeta(),
+    Component.ContentMeta(),
     Component.TagList(),
   ],
   left: [
@@ -31,9 +31,9 @@ export const defaultContentPageLayout: PageLayout = {
     Component.DesktopOnly(Component.Explorer()),
   ],
   right: [
-    // Component.DesktopOnly(Component.Graph()),
+    Component.DesktopOnly(Component.Graph()),
     Component.DesktopOnly(Component.TableOfContents()),
-    // Component.DesktopOnly(Component.RecentNotes({ showTags: false, limit: 3 })),
+    Component.DesktopOnly(Component.RecentNotes({ showTags: false, limit: 3 })),
   ],
 }
 
