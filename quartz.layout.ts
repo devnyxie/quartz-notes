@@ -8,9 +8,9 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     links: {
-      // GitHub: "https://github.com/devnyxie",
-      // "Resume": "https://devnyxie.notion.site/resume",
-      // "Portfolio": "https://devnyxie.com",
+      GitHub: "https://github.com/devnyxie",
+      "Resume": "https://devnyxie.notion.site/resume",
+      "Portfolio": "https://devnyxie.com/projects",
     },
   }),
 }
@@ -28,12 +28,13 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
+    Component.DesktopOnly(Component.RecentNotes({ showTags: false, limit: 3, title: "Recent Notes" })),
     Component.DesktopOnly(Component.Explorer()),
   ],
   right: [
     Component.DesktopOnly(Component.Graph()),
     Component.DesktopOnly(Component.TableOfContents()),
-    Component.DesktopOnly(Component.RecentNotes({ showTags: false, limit: 3 })),
+    
   ],
 }
 
@@ -45,6 +46,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
+    Component.DesktopOnly(Component.RecentNotes({ showTags: false, limit: 3, title: "Recent Notes" })),
     Component.DesktopOnly(Component.Explorer()),
   ],
   right: [],
