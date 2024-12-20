@@ -1,5 +1,6 @@
 ---
 title: Libft
+date: 2024-12-18
 ---
 
 | Function Name | Short Description |
