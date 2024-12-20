@@ -19,7 +19,7 @@ const config: QuartzConfig = {
     baseUrl: "devnyxie.com",
     ignorePatterns: ["private", "templates", ".obsidian", "Excalidraw"],
     defaultDateType: "created",
-    generateSocialImages: false,
+    generateSocialImages: true,
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,
