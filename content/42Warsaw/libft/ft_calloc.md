@@ -2,14 +2,14 @@
 tags: libft
 ---
 
->[!info] Manual
-> - **malloc**: Allocates memory, but leaves it uninitialized (contains garbage values). You must manually initialize the memory before use to avoid errors. 
->   `| 1327 | 2481 | 5972 | 8430 | 9234 | <-- Leftover values (random binary)`
+>[!info] 
+> - **malloc**: Allocates memory, but leaves it uninitialized (contains garbage values). You must manually initialize the memory before use to avoid errors. <br/>
+>   `| 1327 | 2481 | 5972 | 8430 | 9234 | <-- Leftover values (random binary)` <br/>
 >   Reading from uninitialized memory is **undefined behavior** in C, which means your program could crash, produce incorrect results, or behave unpredictably.
-> -  **calloc**: Allocates memory and initializes it to zero. Ideal when you want memory pre-initialized and ready for later use without extra work.
+> -  **calloc**: Allocates memory and initializes it to zero. Ideal when you want memory pre-initialized and ready for later use without extra work. <br/>
 >   `| 0000 | 0000 | 0000 | 0000 | 0000 | <-- Safely zeroed`
 
-![[Pasted image 20241214224007.png]]
+![[attachments/excalibur/ft_calloc.png]]
 # Code
 ```c
 #include <stdio.h>

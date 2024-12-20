@@ -9,6 +9,7 @@ export const sharedPageComponents: SharedLayout = {
   footer: Component.Footer({
     links: {
       GitHub: "https://github.com/devnyxie",
+      "Resume": "https://devnyxie.notion.site/resume",
       "Portfolio": "https://devnyxie.com",
     },
   }),

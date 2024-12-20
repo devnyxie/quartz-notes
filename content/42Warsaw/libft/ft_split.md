@@ -2,10 +2,10 @@
 tags: libft
 ---
 
->[!info] Manual
+>[!info]
 > **ft_split** is a function that splits a string into an array of substrings based on a specified delimiter character. It allocates memory dynamically for each substring and the array, ensuring the result is null-terminated.
 
-![[attachments/Pasted image 20241219002826.png]]
+![[attachments/excalibur/ft_split.png]]
 ## Walkthrough
 ### Counting words
 First, we have to create our `ft_split` function with few variables:
