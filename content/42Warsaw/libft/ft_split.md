@@ -1,5 +1,4 @@
 ---
-title: ft_split()
 tags:
   - libft
 date: 2024-12-18

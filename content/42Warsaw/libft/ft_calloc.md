@@ -1,5 +1,4 @@
 ---
-title: ft_calloc()
 tags:
   - libft
 date: 2024-12-18

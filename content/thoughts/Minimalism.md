@@ -1,3 +1,7 @@
+---
+date: 2024-12-21
+---
+
 # Backstory
 I’m not entirely sure if I love minimalism, but I can’t live without it. I really like the websites packed with features and themes, cluttered desktop setups, a variety of gadgets in my backpack, and heavily decorated apartments filled with plants ~
 After all, that's what life is about - vibrant colors and the little details that make everything feel alive.
