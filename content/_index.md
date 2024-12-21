@@ -4,10 +4,11 @@ tags: []
 date: 2024-12-17
 ---
 
-<img src="/attachments/pinterest/mewcoffee.png" width="200px"/>
+![[attachments/pinterest/mewcoffee.png|200]]
+
 
 Welcome! <br/>
-I’m Timothee. This is my little [digital garden](https://jzhao.xyz/posts/networked-thought) on the Internet — make yourself at home!
+I’m Timothee. This is my little, [minimalistic](/Diary/Minimalism) [digital garden](https://jzhao.xyz/posts/networked-thought) on the Internet — make yourself at home!
 
 At the moment, I'm studying C/C++ at 42 Warsaw and planning to specialize in Cybersecurity, building on my solid background in development.
 
