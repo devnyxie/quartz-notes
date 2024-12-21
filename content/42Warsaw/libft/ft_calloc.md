@@ -11,7 +11,7 @@ date: 2024-12-18
 > -  **calloc**: Allocates memory and initializes it to zero. Ideal when you want memory pre-initialized and ready for later use without extra work. <br/>
 >   `| 0000 | 0000 | 0000 | 0000 | 0000 | <-- Safely zeroed`
 
-![[attachments/excalibur/ft_calloc.png]]
+![[../../attachments/excalidraw/ft_calloc.png]]
 # Code
 ```c
 #include <stdio.h>
