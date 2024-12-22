@@ -6,7 +6,7 @@ date: 2024-12-21
 I’m not entirely sure if I love minimalism, but I can’t live without it. I really like the websites packed with features and themes, cluttered desktop setups, a variety of gadgets in my backpack, and heavily decorated apartments filled with plants ~
 After all, that's what life is about - vibrant colors and the little details that make everything feel alive.
 
-![[../attachments/pinterest/gadgets.webp|300]]![[../attachments/pinterest/green_apartment.webp|300]]
+![[../attachments/pinterest/green_apartment.webp|300]]
 
 Unfortunately, by nature I'm an extreme **neurotic**, which means I'm a very, very stressed person. As a bonus, I can't focus on anything if there a is mess around me.
 
