@@ -1,5 +1,5 @@
 ---
-date: 2024-12-21
+date: 2024-12-22
 tags:
   - libft
 ---
@@ -12,7 +12,43 @@ Moving memory from point A to point B is pretty straightforward if you've reache
 > [!attention] 
 > You can still close this tab. Consider yourself warned xx
 
-![[../../attachments/excalidraw/ft_memmove.svg]]
+```c
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+	unsigned char		*d;
+	const unsigned char	*s = src;
+
+	d = dest;
+	if (d == s)
+	{
+		return (dest);
+	}
+	if (d < s)
+	{
+		while (n--)
+		{
+			*d++ = *s++;
+		}
+	}
+	else
+	{
+		d += n;
+		s += n;
+		while (n--)
+		{
+			*(--d) = *(--s);
+		}
+	}
+	return (dest);
+}
+```
+
+![[attachments/excalidraw/ft_memmove_1.svg]]
 ## Explanation
 Why would we copy backward if destination is after source? Let's consider the following scenario:
-![[attachments/excalidraw/ft_memmove_overflow.svg]]
+![[attachments/excalidraw/ft_memmove_2.svg|500]]
+
+So,
+- If `dst > src`, copy **backward** to avoid overwriting `src`
+- If `dst < src`, copy **forward** as no overlap risk exists
+![[attachments/excalidraw/ft_memmove_3.svg]]
