@@ -99,6 +99,7 @@ button#explorer {
   }
   > #explorer-ul {
     max-height: none;
+    overflow-y: hidden;
   }
 }
 
