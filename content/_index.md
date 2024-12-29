@@ -14,4 +14,11 @@ At the moment, I'm studying C/C++ at 42 Warsaw and planning to specialize in Cyb
 
 Quick access:
 - [42Warsaw](/42Warsaw)
-- [Thoughts](/thoughts)
+
+Current focus:
+- `42 Studies`
+- `The Great Return to Mathematics`
+
+Should to:
+- `Write, Read, Exercise more`
+- `Learn Polish`

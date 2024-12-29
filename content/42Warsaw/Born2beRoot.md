@@ -2,7 +2,7 @@
 tags:
   - linux
   - sysadmin
-date: 2024-12-23
+date: 2024-12-25
 ---
 ![[attachments/Pasted image 20241223071739.webp|100]]
 
@@ -164,4 +164,185 @@ Install the GRUB boot loader to the master boot record. This is the default opti
 > ![[attachments/Pasted image 20241223121041.webp]]
 
 And just like that, we're done installing. 🎉
+
 # Setting up SSH
+
+> [!info]
+> SSH (Secure Shell) is a protocol that allows you to securely connect to a remote server or device. It's commonly used for remote administration, file transfers, and tunneling.
+
+Our task is to setup an SSH server on our virtual machine. This will allow us to connect to the VM remotely and perform administrative tasks. SSH Server should be running on port `4242` and it shouldn't be accessible from the root account.
+
+## SSH Config
+
+In order to do this, we need to edit the SSH configuration file located at `/etc/ssh/sshd_config`:
+
+> [!info]
+> You can login to your VM using the `user` or `root` account you created during installation. If you login as `user`, you can switch to the root account using `su`. When in sudo mode, you can skip the `sudo` command.
+
+```bash
+sudo nano /etc/ssh/sshd_config
+```
+1. Find the line that says `#Port 22` and change it to `Port 4242`. This will change the default SSH port from `22` to `4242`.
+2. Find the line that says `#PermitRootLogin ...` and change it to `PermitRootLogin no`. This will prevent the root account from logging in via SSH.
+
+Once done, save the file (CTRL+X, Y) and restart the SSH service:
+
+```bash
+sudo systemctl restart sshd
+sudo systemctl status ssh
+```
+
+Now the port is changed and root login is disabled. Lets test it out by connecting to the VM via SSH.
+
+## SSH Connection
+![[port_forward.svg]]
+
+### Port Forwarding
+When using VirtualBox, you need to set up port forwarding to connect to the VM via SSH. Let's head over to the VM settings and add a new rule:
+1. Go to VM's `Settings` -> `Network` -> `Advanced` -> `Port Forwarding`
+2. Add a new rule with `Host Port` as `4242` and `Guest Port` as `2222`.
+
+### Connecting
+Now, you can connect to the VM using the following command:
+```bash
+ssh username@localhost -p 2222
+```
+*Replace `username` with the user you created during installation.*
+
+> [!info]
+> Explanation:
+> - `ssh`: The command to connect to a remote server.
+> - `username@localhost`: The username and hostname of the server you want to connect to. Since we're connecting to the VM on the same machine, we use `localhost` instead of an IP address.
+> - `-p 2222`: Specifies the port to connect to. Since we've set up port forwarding, we connect to port `2222` on the host machine, which forwards to port `4242` on the Debian Virtual Machine.
+
+> [!info]- Screenshots
+>![[Pasted image 20241224130440.png]]
+
+Congrats! You've successfully set up an SSH server and connected to your Debian Virtual Machine 🚀
+
+# Firewall
+Once you are logged into SSH, switch to the root user by typing: `su -`
+
+To enhance the server's security, we'll set up a firewall using UFW (Uncomplicated Firewall). UFW is user-friendly and effective for managing firewall rules. Let's start by installing UFW:
+
+`apt install ufw` | Installs UFW.
+
+`ufw default deny incoming` | Blocks all incoming requests.
+
+`ufw default allow outgoing` | Allows all outgoing requests.
+
+`ufw allow 4242` | Allow incoming traffic on port `4242`. This is crucial to ensure you can still access your server via SSH.
+
+`ufw enable` | Enables UFW.
+
+# Sudo
+The sudo program is a crucial tool for Linux, allowing users to execute commands with privileges of root (or another user).
+
+To install, type: `apt install sudo`
+
+Now, we'll adjust the sudo settings. Type `visudo` to open the configuration file.
+
+Add the following lines:
+
+`Defaults secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"` | Limits the paths that can be used by sudo to run commands. This setting is already there and you can leave it as it is.
+
+`Defaults requiretty` | Requires TTY to use sudo.
+
+`Defaults badpass_message="WRONG PASSWORD"` | Displays a custom message when using a wrong password with sudo.
+
+`Defaults logfile="/var/log/sudo/sudo.log"` | Sets the input logs file.
+
+`Defaults log_input` | Logs input.
+
+`Defaults log_output` | Logs output.
+
+`Defaults iolog_dir=/var/log/sudo` | Sets the directory to save additional output and input logs.
+
+`Defaults passwd_tries=3` | Limits connection attempts using sudo.
+
+# Groups
+We need to add our user to the `user42` and `sudo` groups as specified in the born2beroot requirements.
+
+`groupadd user42` | Adds the `user42` group.
+
+`usermod -a -G user42,sudo chlimous` | Adds the `chlimous` user to the `user42` and `sudo` groups.
+
+To verify the changes, you can check the `/etc/group` file: `cat /etc/group`
+
+Now that your user has been added to the sudo group, he can execute commands using `sudo`, elevating his permissions to perform administrative tasks.
+
+# Password Policy
+Go to the `/etc/login.defs` configuration file and modify the following lines:
+
+`PASS_MAX_DAYS 30` | Makes the password expire every 30 days.
+
+`PASS_MIN_DAYS 2` | Minimum number of days before the modification of a password.
+
+`PASS_WARN_AGE 7` | Number of days warning given before a password expires. You can leave it as it is.
+
+Now we need to ensure the policy changes we've made are applied to our current users:
+
+`chage -M 30 chlimous` | Sets `PASS_MAX_DAYS` to `30` days for user `chlimous`.
+
+`chage -m 2 chlimous` | Sets `PASS_MIN_DAYS` to `2` days for user `chlimous`.
+
+Apply these changes for user and root by saving the file.
+
+---
+
+To strengthten the password policy, we will utilize a module called pwquality:
+```bash
+apt install libpam-pwquality
+```
+Then, access /etc/pam.d/common-password configuration file to set the password rules.
+
+Change:
+
+`password requisite pam_pwquality.so retry=3`
+
+to:
+
+`password requisite pam_pwquality.so retry=3 minlen=10 difok=7 maxrepeat=3 dcredit=-1 ucredit=-1 lcredit=-1 reject_username enforce_for_root`
+
+Details:
+
+`retry` | Maximum amount of incorrect attempts.
+
+`minlen` | Minimum acceptable size for the new password.
+
+`difok` | Number of characters in the new password that must not be present in the old password. Even with enforce_for_root, this rule doesn't apply to the root user since the old password is not required to change it.
+
+`maxrepeat` | The maximum number of allowed same consecutive characters in the new password.
+
+`dcredit` | Minimum number of digits in the new password. (negative value)
+
+`ucredit` | Minimum number of uppercase characters in the new password. (negative value)
+
+`lcredit` | Minimum number of lowercase characters in the new password. (negative value)
+
+`reject_username` | The new password cannot include the username.
+
+`enforce_for_root` | Applies rules to root.
+
+
+Save the file in order to enforce the rules and update the passwords for both your user account and the root account:
+
+```bash
+passwd devnyxie #Changes the password of the devnyxie user
+passwd root
+```
+
+# Monitoring
+The final task is to set up a monitoring script that will log the CPU and memory usage of the system every 10 minutes. The script should run in the background and log the data to a file.
+
+Create a script file named `monitoring.sh` in the `/root` directory:
+
+```bash
+nano monitoring.sh
+```
+
+Write your own script or use the following template (bad choice, RTFM):
+```bash
+#!/bin/bash
+
+```

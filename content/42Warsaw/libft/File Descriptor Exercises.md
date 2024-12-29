@@ -1,3 +1,11 @@
+---
+tags:
+  - C
+  - libft
+date: 2024-12-23
+title: FD Exercises
+---
+
 > [!info]
 > A File Descriptor (fd) is a unique integer assigned by the kernel to represent an open file, socket, or other resource.
 > - `0` is **stdin** (standard input)
