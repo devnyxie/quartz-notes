@@ -4,11 +4,13 @@ tags:
   - sysadmin
 date: 2024-12-25
 ---
-![[attachments/Pasted image 20241223071739.webp|100]]
+![[Pasted image 20241223071739.webp|100]]
 
 The **Born2beRoot** project is a system administration exercise that introduces virtualization concepts. You will create a virtual machine using VirtualBox or UTM, set up a server with Debian or Rocky Linux, and follow strict configurations, including strong password policies, sudo rules, and a monitoring script. The mandatory tasks include configuring encrypted partitions, a secured SSH service, and a firewall.
 
 The **bonus** involves setting up additional features, like **advanced partitioning**, a **WordPress website** with specific services, or another functional service of your choice. However, bonus evaluation requires the mandatory part to be <u>flawless</u>.
+
+[[born2beroot.pdf|Born2BeRoot.pdf]]
 
 # Download the Debian ISO
 Visit the [Debian download page](https://www.debian.org/distrib/) and download the latest stable version of a 64-bit small installation image (e.g., `debian-12.8.0-amd64-netinst.iso`).
@@ -33,7 +35,7 @@ Now that our virtual machine is ready, the next step is to install the operating
 Click "Start" on your Virtualbox interface. Select "Install" and then follow the on-screen instructions. The installation process is quite straightforward, especially when compared to more complex distributions like Arch or Gentoo. If you've ever tried installing those, you'll find Debian notably easier.
 
 > [!info]- Screenshots
-> ![[attachments/Screenshot from 2024-12-23 07-24-21.webp|600]]
+> ![[Screenshot from 2024-12-23 07-24-21.webp|600]]
 
 Set the hostname as your login followed by 42, as required by the project guidelines. This is the name of your device on the local network. Skip domain name configuration. Set a password for root. Make a user with your login and set a password for this account.
 
@@ -73,29 +75,29 @@ Select "Guided - use entire disk and set up encrypted LVM" then select "Separate
 Set a password. With this, even if the police raid my home, they won't get to my data unless they break my (super weak) password. 🥸 
 
 > [!info]- Screenshots
-> ![[attachments/Screenshot from 2024-12-23 08-49-34.webp|700]]
-> ![[attachments/Screenshot from 2024-12-23 08-49-57.webp|700]]
-> ![[attachments/Pasted image 20241223085721.webp]]
+> ![[Screenshot from 2024-12-23 08-49-34.webp|700]]
+> ![[Screenshot from 2024-12-23 08-49-57.webp|700]]
+> ![[Pasted image 20241223085721.webp]]
 > Adjust the volume group size in guided partitioning to carve out space for a couple more logical volumes.
-> ![[attachments/Screenshot from 2024-12-23 09-03-56-1.webp]]
+> ![[Screenshot from 2024-12-23 09-03-56-1.webp]]
 
 
 
 Head over to "Configure the Logical Volume Manager", and make two logical volumes: `srv` and `var-log`. Set them both as "Ext4 journaling file system" and mount them respectively to `/srv` and `/var/log`.
 
 > [!info]- Screenshots
-> ![[attachments/Pasted image 20241223091041.webp]]
+> ![[Pasted image 20241223091041.webp]]
 
 ### srv
 > [!info]
 > What is `/srv`? It's a directory that is used to store data served by the system. For example, if you have a web server, you might store your website files in `/srv/www`.
 
 > [!info]- Screenshots
-> ![[attachments/Pasted image 20241223091323.webp]]
-> ![[attachments/Pasted image 20241223091345.webp]]
-> ![[attachments/Pasted image 20241223091415.webp]]
+> ![[Pasted image 20241223091323.webp]]
+> ![[Pasted image 20241223091345.webp]]
+> ![[Pasted image 20241223091415.webp]]
 > Let's allocate `4000mb` for `/srv`:
-> ![[attachments/Pasted image 20241223091438.webp]]
+> ![[Pasted image 20241223091438.webp]]
 
 
 
@@ -119,38 +121,38 @@ But in order to use them, we need to format (`ext4` format) and mount them. In s
 
 > [!info]- Screenshots
 > `srv`:
-> ![[attachments/Pasted image 20241223092332.webp]]
-> ![[attachments/Pasted image 20241223102240.webp]]
-> ![[attachments/Pasted image 20241223102255.webp]]
-> ![[attachments/Pasted image 20241223102319.webp]]
-> ![[attachments/Pasted image 20241223102332.webp]]
-> ![[attachments/Pasted image 20241223102352.webp]]
+> ![[Pasted image 20241223092332.webp]]
+> ![[Pasted image 20241223102240.webp]]
+> ![[Pasted image 20241223102255.webp]]
+> ![[Pasted image 20241223102319.webp]]
+> ![[Pasted image 20241223102332.webp]]
+> ![[Pasted image 20241223102352.webp]]
 
 Repeat the same process for `/var/log`:
 - Format it as `ext4`
 - Mount it to `/var/log` (enter manually)
 
 > [!info]- Screenshots
-> ![[attachments/Pasted image 20241223102843.webp]]
+> ![[Pasted image 20241223102843.webp]]
 
 Seems like we're done with partitioning. Let's move on to the next step.
 ## Extra Settings
 ### Installation Media Scan
 Avoid scanning for extra installation media
 > [!info]- Screenshots
-> ![[attachments/Pasted image 20241223105600.webp]]
+> ![[Pasted image 20241223105600.webp]]
 ### Country
 Select your country from the list
 > [!info]- Screenshots
-> ![[attachments/Pasted image 20241223105711.webp]]
+> ![[Pasted image 20241223105711.webp]]
 ### Mirror
 Select the default Debian archive mirror
 > [!info]- Screenshots
-> ![[attachments/Pasted image 20241223105747.webp]]
+> ![[Pasted image 20241223105747.webp]]
 ### HTTP Proxy
 Leave it blank `:)`
 > [!info]- Screenshots
-> ![[attachments/Pasted image 20241223105916.webp]]
+> ![[Pasted image 20241223105916.webp]]
 
 ### Software Selection
 Choose only the `SSH server` and `standard system utilities`. Use space to check/uncheck.
@@ -159,9 +161,9 @@ Choose only the `SSH server` and `standard system utilities`. Use space to check
 Install the GRUB boot loader to the master boot record. This is the default option.
 
 > [!info]- Screenshots
-> ![[attachments/Pasted image 20241223113440.webp]]
-> ![[attachments/Pasted image 20241223113747.webp]]
-> ![[attachments/Pasted image 20241223121041.webp]]
+> ![[Pasted image 20241223113440.webp]]
+> ![[Pasted image 20241223113747.webp]]
+> ![[Pasted image 20241223121041.webp]]
 
 And just like that, we're done installing. 🎉
 
@@ -349,18 +351,18 @@ Write your own script or use my script (bad choice, RTFM):
 cmd=$(uname -a)
 printf "#Architecture: $cmd\n"
 
-# cpu physical (sockets)
+# cpu sockets
 cmd=$(lscpu | grep Socket | awk '{print $2}')
 printf "#CPU physical: $cmd\n"
 
-
+# virtual cpu's
 cmd=$(nproc)
 printf "#vCPU: $cmd\n"
 
 # ram usage
 cmd1=$(free -m | grep Mem | awk '{print $3}')
 cmd2=$(free -m | grep Mem | awk '{print $2}')
-cmd3=$(awk "BEGIN {printf \"%.2f\", $cmd1/$cmd2 * 100}")  #limit to two decimal places
+cmd3=$(awk "BEGIN {printf \"%.2f\", $cmd1/$cmd2 * 100}")  # limit to two decimal places
 printf "#Memory Usage: $cmd1/$cmd2%s ($cmd3%%)\n" "MB"
 
 # disk usage
@@ -375,8 +377,8 @@ printf "#Disk Usage: $cmd1/$cmd2%s ($cmd3%%)\n" "Gb"
 # cpu load
 cmd1=$(mpstat | tail -n 1 | awk '{print $4}')
 cmd2=$(mpstat | tail -n 1 | awk '{print $6}')
-cmd3=$(echo "scale=2; $cmd1 + $cmd2" | bc)  #set scale for precision
-cmd3=$(printf "%.2f" "$cmd3")               #ensure leading zero
+cmd3=$(echo "scale=2; $cmd1 + $cmd2" | bc)  # set scale for precision
+cmd3=$(printf "%.2f" "$cmd3")               # ensure leading zero
 printf "#CPU load: $cmd3%%\n"
 
 cmd=$(who -b | awk '{print $3 " " $4}')
@@ -393,25 +395,50 @@ else
         printf "no\n"
 fi
 
-#tcp connections
+# tcp connections
 cmd=$(echo "$(ss -t state established | wc -l) - 1" | bc)
 printf "#Connections TCP: $cmd ESTABLISHED\n"
 
-#user log
+# user log
 cmd=$(($(w | wc -l) - 2))
 printf "#User log: $cmd\n"
 
-#network info
-## IP
+# network info
+# ip
 cmd1=$(ip address | grep enp | grep inet | awk '{print $2}' | cut -d / -f1)
-## MAC
+# mac
 cmd2=$(ip address | grep enp -A 1 | grep ether | awk '{print $2}')
 printf "#Network: IP $cmd1 ($cmd2)\n"
 
-#count sudo commands in sudo.log
+# count sudo commands in sudo.log
 cmd=$(grep -c 'COMMAND=' /var/log/sudo/sudo.log 2>/dev/null || echo 0)
 printf "#Sudo: $cmd cmd\n"
 ```
+
+No worries if you don't understand the script. It's just a bunch of commands to get system information and <u>format it nicely</u>.
+
+For example:
+- `uname -a`: Prints general system information, including the kernel version, architecture, and hostname.
+  `uname -a` output example: 
+  ```
+  Linux debian 5.10.0-11-amd64 #1 SMP Debian 5.10.92-1 (2022-01-14) x86_64 GNU/Linux
+  ```
+- `lscpu`: Displays information about the CPU architecture. We use it to get the **number of CPU sockets**.
+  > [!info] What is a CPU socket?
+  > A CPU socket is a physical connector on the motherboard that houses the CPU. It's where you install the processor.
+- `nproc`: Prints the number of processing units available to the current process. We use it to get the **number of virtual CPUs**.
+  > [!info] What is a processing unit?
+  > A processing unit is a logical unit that can execute instructions. It can be a physical core, a thread, or a virtual core.
+- `free -m`: Displays the amount of free and used memory (RAM) in the system. We use it to get the **memory usage**.
+- `df -h`: Shows the disk space usage of the file system. We use it to get the **disk usage**.
+- `mpstat`: Displays the CPU statistics. We use it to get the **CPU load**.
+- `who -b`: Shows the **last system boot time**.
+- `cat /etc/fstab`: Prints the file system table. We use it to check if **LVM** (Logical Volume Manager) is used.
+- `ss -t state established`: Shows the number of **TCP connections** in the established state.
+- `w`: Displays information about the users currently logged in. We use it to get the **number of users**.
+- `ip address`: Shows the network interfaces and their IP addresses. We use it to get the **network information**.
+- `grep -c 'COMMAND=' /var/log/sudo/sudo.log`: Counts the number of **sudo commands** in the sudo log file.
+
 
 # Cron Job
 To run the script every 10 minutes, we'll set up a [cron](https://en.wikipedia.org/wiki/Cron) job. Cron is a time-based job scheduler in Unix-like operating systems. It allows you to schedule tasks to run at specific intervals.
@@ -425,3 +452,5 @@ Edit the crontab file using the command `crontab -e` and add the following line 
 This line tells the system to run the `monitoring.sh` script every 10 minutes. Save the file and exit.
 
 And that's it! You've successfully set up a monitoring script that logs all the necessary system information every 10 minutes 🎉
+
+![[good_job.gif|450]]
