@@ -332,7 +332,7 @@ passwd devnyxie #Changes the password of the devnyxie user
 passwd root
 ```
 
-# Monitoring
+# Monitoring Script
 The final task is to set up a monitoring script that will log the CPU and memory usage of the system every 10 minutes. The script should run in the background and log the data to a file.
 
 Create a script file named `monitoring.sh` in the `/root` directory:
@@ -341,8 +341,87 @@ Create a script file named `monitoring.sh` in the `/root` directory:
 nano monitoring.sh
 ```
 
-Write your own script or use the following template (bad choice, RTFM):
+Write your own script or use my script (bad choice, RTFM):
 ```bash
-#!/bin/bash
+#!bin/bash
 
+# architecture
+cmd=$(uname -a)
+printf "#Architecture: $cmd\n"
+
+# cpu physical (sockets)
+cmd=$(lscpu | grep Socket | awk '{print $2}')
+printf "#CPU physical: $cmd\n"
+
+
+cmd=$(nproc)
+printf "#vCPU: $cmd\n"
+
+# ram usage
+cmd1=$(free -m | grep Mem | awk '{print $3}')
+cmd2=$(free -m | grep Mem | awk '{print $2}')
+cmd3=$(awk "BEGIN {printf \"%.2f\", $cmd1/$cmd2 * 100}")  #limit to two decimal places
+printf "#Memory Usage: $cmd1/$cmd2%s ($cmd3%%)\n" "MB"
+
+# disk usage
+## used space
+cmd1=$(df -h --block-size=G --total | tail -n 1 | awk '{print $3}' | cut -d G -f1)
+## total space
+cmd2=$(df -h --block-size=G --total | tail -n 1 | awk '{print $2}' | cut -d G -f1)
+## percentage
+cmd3=$(df -h --block-size=G --total | tail -n 1 | awk '{print $5}' | cut -d % -f1)
+printf "#Disk Usage: $cmd1/$cmd2%s ($cmd3%%)\n" "Gb"
+
+# cpu load
+cmd1=$(mpstat | tail -n 1 | awk '{print $4}')
+cmd2=$(mpstat | tail -n 1 | awk '{print $6}')
+cmd3=$(echo "scale=2; $cmd1 + $cmd2" | bc)  #set scale for precision
+cmd3=$(printf "%.2f" "$cmd3")               #ensure leading zero
+printf "#CPU load: $cmd3%%\n"
+
+cmd=$(who -b | awk '{print $3 " " $4}')
+printf "#Last boot: $cmd\n"
+
+# lvm use
+# maps the lvm devices and count them
+cmd=$(cat /etc/fstab | grep /dev/mapper | wc -l)
+printf "#LVM use: "
+if [ $cmd -gt 0 ]
+then
+        printf "yes\n"
+else
+        printf "no\n"
+fi
+
+#tcp connections
+cmd=$(echo "$(ss -t state established | wc -l) - 1" | bc)
+printf "#Connections TCP: $cmd ESTABLISHED\n"
+
+#user log
+cmd=$(($(w | wc -l) - 2))
+printf "#User log: $cmd\n"
+
+#network info
+## IP
+cmd1=$(ip address | grep enp | grep inet | awk '{print $2}' | cut -d / -f1)
+## MAC
+cmd2=$(ip address | grep enp -A 1 | grep ether | awk '{print $2}')
+printf "#Network: IP $cmd1 ($cmd2)\n"
+
+#count sudo commands in sudo.log
+cmd=$(grep -c 'COMMAND=' /var/log/sudo/sudo.log 2>/dev/null || echo 0)
+printf "#Sudo: $cmd cmd\n"
 ```
+
+# Cron Job
+To run the script every 10 minutes, we'll set up a [cron](https://en.wikipedia.org/wiki/Cron) job. Cron is a time-based job scheduler in Unix-like operating systems. It allows you to schedule tasks to run at specific intervals.
+
+Edit the crontab file using the command `crontab -e` and add the following line at the end:
+
+```bash
+*/10 * * * * /root/monitoring.sh
+```
+
+This line tells the system to run the `monitoring.sh` script every 10 minutes. Save the file and exit.
+
+And that's it! You've successfully set up a monitoring script that logs all the necessary system information every 10 minutes 🎉
