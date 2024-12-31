@@ -20,4 +20,3 @@ That said, this tendency was much more noticeable during my childhood. I vividly
 
 # Where am I going with this backstory?
 It's essential to understand how our brain works in order to.. exist happily, you know? We are [here to stay](https://youtu.be/3qFEZIG31ZQ?si=82O452SpYnZJcrVJ). Our time is limited, and the faster we solve such issues, the better it is for us. For me it may be minimalism; for you, it might be something entirely different. As long as it makes us happy, that’s what truly matters.
-![[../attachments/gifs/nature/summer.gif|500]]
