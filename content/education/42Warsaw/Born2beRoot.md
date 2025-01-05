@@ -4,7 +4,7 @@ tags:
   - sysadmin
 date: 2024-12-25
 ---
-![[Pasted image 20241223071739.webp|100]]
+![[attachments/logos/debian_logo.webp|100]]
 
 The **Born2beRoot** project is a system administration exercise that introduces virtualization concepts. You will create a virtual machine using VirtualBox or UTM, set up a server with Debian or Rocky Linux, and follow strict configurations, including strong password policies, sudo rules, and a monitoring script. The mandatory tasks include configuring encrypted partitions, a secured SSH service, and a firewall.
 
@@ -35,7 +35,7 @@ Now that our virtual machine is ready, the next step is to install the operating
 Click "Start" on your Virtualbox interface. Select "Install" and then follow the on-screen instructions. The installation process is quite straightforward, especially when compared to more complex distributions like Arch or Gentoo. If you've ever tried installing those, you'll find Debian notably easier.
 
 > [!info]- Screenshots
-> ![[Screenshot from 2024-12-23 07-24-21.webp|600]]
+> ![[attachments/42Warsaw/born2beroot/images/screenshots/Screenshot from 2024-12-23 07-24-21.webp|600]]
 
 Set the hostname as your login followed by 42, as required by the project guidelines. This is the name of your device on the local network. Skip domain name configuration. Set a password for root. Make a user with your login and set a password for this account.
 
@@ -75,29 +75,29 @@ Select "Guided - use entire disk and set up encrypted LVM" then select "Separate
 Set a password. With this, even if the police raid my home, they won't get to my data unless they break my (super weak) password. 🥸 
 
 > [!info]- Screenshots
-> ![[Screenshot from 2024-12-23 08-49-34.webp|700]]
-> ![[Screenshot from 2024-12-23 08-49-57.webp|700]]
-> ![[Pasted image 20241223085721.webp]]
+> ![[attachments/42Warsaw/born2beroot/images/screenshots/Screenshot from 2024-12-23 08-49-34.webp|700]]
+> ![[attachments/42Warsaw/born2beroot/images/screenshots/Screenshot from 2024-12-23 08-49-57.webp|700]]
+> ![[attachments/42Warsaw/born2beroot/images/screenshots/Pasted image 20241223085721.webp]]
 > Adjust the volume group size in guided partitioning to carve out space for a couple more logical volumes.
-> ![[Screenshot from 2024-12-23 09-03-56-1.webp]]
+> ![[attachments/42Warsaw/born2beroot/images/screenshots/Screenshot from 2024-12-23 09-03-56-1.webp]]
 
 
 
 Head over to "Configure the Logical Volume Manager", and make two logical volumes: `srv` and `var-log`. Set them both as "Ext4 journaling file system" and mount them respectively to `/srv` and `/var/log`.
 
 > [!info]- Screenshots
-> ![[Pasted image 20241223091041.webp]]
+> ![[attachments/42Warsaw/born2beroot/images/screenshots/Pasted image 20241223091041.webp]]
 
 ### srv
 > [!info]
 > What is `/srv`? It's a directory that is used to store data served by the system. For example, if you have a web server, you might store your website files in `/srv/www`.
 
 > [!info]- Screenshots
-> ![[Pasted image 20241223091323.webp]]
-> ![[Pasted image 20241223091345.webp]]
-> ![[Pasted image 20241223091415.webp]]
+> ![[attachments/42Warsaw/born2beroot/images/screenshots/Pasted image 20241223091323.webp]]
+> ![[attachments/42Warsaw/born2beroot/images/screenshots/Pasted image 20241223091345.webp]]
+> ![[attachments/42Warsaw/born2beroot/images/screenshots/Pasted image 20241223091415.webp]]
 > Let's allocate `4000mb` for `/srv`:
-> ![[Pasted image 20241223091438.webp]]
+> ![[attachments/42Warsaw/born2beroot/images/screenshots/Pasted image 20241223091438.webp]]
 
 
 
@@ -121,38 +121,38 @@ But in order to use them, we need to format (`ext4` format) and mount them. In s
 
 > [!info]- Screenshots
 > `srv`:
-> ![[Pasted image 20241223092332.webp]]
-> ![[Pasted image 20241223102240.webp]]
-> ![[Pasted image 20241223102255.webp]]
-> ![[Pasted image 20241223102319.webp]]
-> ![[Pasted image 20241223102332.webp]]
-> ![[Pasted image 20241223102352.webp]]
+> ![[attachments/42Warsaw/born2beroot/images/screenshots/Pasted image 20241223092332.webp]]
+> ![[attachments/42Warsaw/born2beroot/images/screenshots/Pasted image 20241223102240.webp]]
+> ![[attachments/42Warsaw/born2beroot/images/screenshots/Pasted image 20241223102255.webp]]
+> ![[attachments/42Warsaw/born2beroot/images/screenshots/Pasted image 20241223102319.webp]]
+> ![[attachments/42Warsaw/born2beroot/images/screenshots/Pasted image 20241223102332.webp]]
+> ![[attachments/42Warsaw/born2beroot/images/screenshots/Pasted image 20241223102352.webp]]
 
 Repeat the same process for `/var/log`:
 - Format it as `ext4`
 - Mount it to `/var/log` (enter manually)
 
 > [!info]- Screenshots
-> ![[Pasted image 20241223102843.webp]]
+> ![[attachments/42Warsaw/born2beroot/images/screenshots/Pasted image 20241223102843.webp]]
 
 Seems like we're done with partitioning. Let's move on to the next step.
 ## Extra Settings
 ### Installation Media Scan
 Avoid scanning for extra installation media
 > [!info]- Screenshots
-> ![[Pasted image 20241223105600.webp]]
+> ![[attachments/42Warsaw/born2beroot/images/screenshots/Pasted image 20241223105600.webp]]
 ### Country
 Select your country from the list
 > [!info]- Screenshots
-> ![[Pasted image 20241223105711.webp]]
+> ![[attachments/42Warsaw/born2beroot/images/screenshots/Pasted image 20241223105711.webp]]
 ### Mirror
 Select the default Debian archive mirror
 > [!info]- Screenshots
-> ![[Pasted image 20241223105747.webp]]
+> ![[attachments/42Warsaw/born2beroot/images/screenshots/Pasted image 20241223105747.webp]]
 ### HTTP Proxy
 Leave it blank `:)`
 > [!info]- Screenshots
-> ![[Pasted image 20241223105916.webp]]
+> ![[attachments/42Warsaw/born2beroot/images/screenshots/Pasted image 20241223105916.webp]]
 
 ### Software Selection
 Choose only the `SSH server` and `standard system utilities`. Use space to check/uncheck.
@@ -161,9 +161,9 @@ Choose only the `SSH server` and `standard system utilities`. Use space to check
 Install the GRUB boot loader to the master boot record. This is the default option.
 
 > [!info]- Screenshots
-> ![[Pasted image 20241223113440.webp]]
-> ![[Pasted image 20241223113747.webp]]
-> ![[Pasted image 20241223121041.webp]]
+> ![[attachments/42Warsaw/born2beroot/images/screenshots/Pasted image 20241223113440.webp]]
+> ![[attachments/42Warsaw/born2beroot/images/screenshots/Pasted image 20241223113747.webp]]
+> ![[attachments/42Warsaw/born2beroot/images/screenshots/Pasted image 20241223121041.webp]]
 
 And just like that, we're done installing. 🎉
 
@@ -218,7 +218,7 @@ ssh username@localhost -p 2222
 > - `-p 2222`: Specifies the port to connect to. Since we've set up port forwarding, we connect to port `2222` on the host machine, which forwards to port `4242` on the Debian Virtual Machine.
 
 > [!info]- Screenshots
->![[Pasted image 20241224130440.png]]
+>![[attachments/42Warsaw/born2beroot/images/screenshots/Pasted image 20241224130440.png]]
 
 Congrats! You've successfully set up an SSH server and connected to your Debian Virtual Machine 🚀
 
@@ -454,3 +454,74 @@ This line tells the system to run the `monitoring.sh` script every 10 minutes. S
 And that's it! You've successfully set up a monitoring script that logs all the necessary system information every 10 minutes 🎉
 
 ![[good_job.gif|450]]
+
+# Bonus Part ⭐
+
+![[attachments/Screen_Shot_2025-01-05_at_21.39.39-removebg-preview.webp|400]]
+
+The bonus part of the Born2beRoot project involves setting up additional features on your server.
+- **Advanced Partitioning**: We've already set up advanced partitioning in the mandatory part. ✅
+- **WordPress Website**: You can set up a WordPress website on your server. This involves installing and configuring a web server (Lighttpd), a database server (MySQL or MariaDB), and WordPress itself.
+- **Additional Service**: You can set up any additional service of your choice. For example, you could install and configure an FTP server, a mail server, or a monitoring tool like Nagios.
+I chose to set up a **Webmin**, a web-based system administration tool. With Webmin, you can manage your server, databases, cron jobs, security, configure system settings, and monitor performance through a web interface.
+
+
+> [!info]- Webmin Screenshots
+> ![[attachments/42Warsaw/born2beroot/images/webmin/webmin_1.webp]]
+> ![[attachments/42Warsaw/born2beroot/images/webmin/webmin_2.webp]]
+> ![[attachments/42Warsaw/born2beroot/images/webmin/webmin_3.webp]]
+
+## WordPress and Lighttpd
+This part is not complex, but it requires a lot of steps. You need to install and configure a web server (Lighttpd), a database server (MySQL or MariaDB), and WordPress itself. There are many guides, but I really recommend to dive into it and understand what you're doing. Good luck! 🍀
+
+## Webmin
+### Installation
+Please check the [official Webmin installation guide](https://webmin.com/download) for the most up-to-date instructions.
+
+I've installed Webmin on my server using the following commands:
+
+Add the Webmin repository to your sources list:
+```bash
+curl -o webmin-setup-repos.sh https://raw.githubusercontent.com/webmin/webmin/master/webmin-setup-repos.sh
+sh webmin-setup-repos.sh
+```
+
+Install Webmin:
+```bash
+apt-get install webmin --install-recommends
+```
+
+Check if the Webmin 
+
+### Configuration
+Once Webmin is installed, you can access it through your web browser by entering `https://localhost:10000`. **You may get a warning about the SSL certificate, but you can proceed to the site.**
+
+In order to get rid of the warning, we can safely switch to HTTP instead of HTTPS protocol, since we're accessing the server locally.
+
+Edit the Webmin configuration file:
+```bash
+nano /etc/webmin/miniserv.conf
+```
+Find the line that says `ssl=1` and change it to `ssl=0`. Save the file and restart the Webmin service:
+```bash
+systemctl restart webmin
+```
+
+### Port Forwarding
+In order to access the Webmin interface from your host machine, you need to open port `10000` both for Firewall and VirtualBox.
+
+Firewall rule:
+```bash
+ufw allow 10000
+```
+
+Add a new port forwarding rule in VirtualBox:
+| Name       | Protocol | Host IP | Host Port | Guest IP | Guest Port |
+|------------|----------|---------|-----------|----------|------------|
+| Webmin     | TCP      |         | 10000     |          | 10000      |
+
+
+### Accessing Webmin
+Now you can access the Webmin interface from your host machine by entering `http://localhost:10000` in your web browser. You'll be prompted to enter your root credentials to log in.
+
+And that's it! You've successfully set up Webmin on your server 🚀

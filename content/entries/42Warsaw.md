@@ -1,4 +1,4 @@
-![[attachments/kickoff_photo.webp]]
+![[attachments/42Warsaw/photos/kickoff_photo.webp]]
 
 # Why?
 
