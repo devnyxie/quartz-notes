@@ -1,7 +1,7 @@
 ---
 date: 2024-12-21
 tags:
-  - C
+  - c
   - libft
 ---
 >[!info] 
@@ -12,7 +12,7 @@ Here the logic is pretty straightforward. Our steps should be:
     - +1 if `N=0`, still the len of `0` is `1`
     - +1 if `N<0`, space for the minus sign.
 2. allocate memory for string "result" -> `(len+1)*sizeof(char)`
-   - memory should be initialized, since we should loop until the negative sign `-` when filling the `result`; garbage values may interfere. Therefore I'll use [ft_calloc()](education/42Warsaw/libft/ft_calloc.md).
+   - memory should be initialized, since we should loop until the negative sign `-` when filling the `result`; garbage values may interfere. Therefore I'll use [ft_calloc()](studies/42Warsaw/libft/ft_calloc.md).
 4. (loop) assign last digit of `(N%10)+'0'` to `result[len--]`
 ## Number Length
 ```c

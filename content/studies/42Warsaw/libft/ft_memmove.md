@@ -1,7 +1,7 @@
 ---
 date: 2024-12-22
 tags:
-  - C
+  - c
   - libft
 ---
 > [!info]

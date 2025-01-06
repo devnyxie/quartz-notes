@@ -8,9 +8,9 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/devnyxie",
-      "Resume": "https://devnyxie.notion.site/resume",
-      "Portfolio": "https://devnyxie.com/projects",
+      // GitHub: "https://github.com/devnyxie",
+      // "Resume": "https://devnyxie.notion.site/resume",
+      // "Portfolio": "https://devnyxie.com/projects",
     },
   }),
 }
@@ -29,7 +29,14 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Search(),
     Component.Darkmode(),
     Component.DesktopOnly(Component.RecentNotes({ showTags: false, limit: 3, title: "Activity Log" })),
-    Component.DesktopOnly(Component.Explorer()),
+    Component.DesktopOnly(Component.Explorer(
+      {
+        filterFn: (node) => {
+          const omit = new Set(["entries"])
+          return !omit.has(node.name.toLowerCase())
+      },
+      }
+    )),
   ],
   right: [
     // Component.DesktopOnly(Component.Graph()),
@@ -47,7 +54,14 @@ export const defaultListPageLayout: PageLayout = {
     Component.Search(),
     Component.Darkmode(),
     Component.DesktopOnly(Component.RecentNotes({ showTags: false, limit: 3, title: "Activity Log" })),
-    Component.DesktopOnly(Component.Explorer()),
+    Component.DesktopOnly(Component.Explorer(
+      {
+        filterFn: (node) => {
+          const omit = new Set(["entries"])
+          return !omit.has(node.name.toLowerCase())
+      },
+      }
+    )),
   ],
   right: [],
 }

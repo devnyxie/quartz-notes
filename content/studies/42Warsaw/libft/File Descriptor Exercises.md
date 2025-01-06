@@ -1,6 +1,6 @@
 ---
 tags:
-  - C
+  - c
   - libft
 date: 2024-12-23
 title: FD Exercises
