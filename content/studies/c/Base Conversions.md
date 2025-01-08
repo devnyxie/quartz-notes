@@ -3,6 +3,7 @@ date: 2025-01-08
 tags:
   - c
   - ft_printf
+  - libft
 ---
 
 For this example we will create a `ft_itoa_base` function. If you are not familiar with [[studies/42Warsaw/libft/ft_itoa|ft_itoa]] function, you should check it first.
