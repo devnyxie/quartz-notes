@@ -1,3 +1,7 @@
+---
+date: 2024-12-29
+---
+
 ![[attachments/42Warsaw/photos/kickoff_photo.webp]]
 
 # Why?
