@@ -2,7 +2,6 @@
 date: 2025-01-06
 tags:
   - c
-  - ft_printf
 ---
 
 Variadic Functions in C and C++ are functions that can take a variable number of arguments. The number of arguments can be zero or more. The arguments are passed to the function in a comma-separated list. The function can be called with any number of arguments.
