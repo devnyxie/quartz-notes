@@ -6,13 +6,15 @@ export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
   afterBody: [],
-  footer: Component.Footer({
-    links: {
-      // GitHub: "https://github.com/devnyxie",
-      // "Resume": "https://devnyxie.notion.site/resume",
-      // "Portfolio": "https://devnyxie.com/projects",
-    },
-  }),
+  footer: Component.Footer(
+    // {
+    //   links: {
+    //     GitHub: "https://github.com/devnyxie",
+    //     "Resume": "https://devnyxie.notion.site/resume",
+    //     "Portfolio": "https://devnyxie.com/projects",
+    //   },
+    // }
+),
 }
 
 // components for pages that display a single page (e.g. a single note)
@@ -47,7 +49,9 @@ export const defaultContentPageLayout: PageLayout = {
         linkDistance: 75,
       },
     })),
-    Component.DesktopOnly(Component.TableOfContents()),    
+    Component.DesktopOnly(Component.TableOfContents()),
+    Component.DesktopOnly(Component.Backlinks()),
+    // Component.DesktopOnly(Component.TagList(),), 
   ],
 }
 
@@ -67,7 +71,7 @@ export const defaultListPageLayout: PageLayout = {
           return !omit.has(node.name.toLowerCase())
       },
       }
-    )),
+    ))
   ],
   right: [
     Component.DesktopOnly(Component.Graph({

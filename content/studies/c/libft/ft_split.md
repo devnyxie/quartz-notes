@@ -5,7 +5,7 @@ date: 2024-12-18
 ---
 
 >[!info]
-> **ft_split** is a function from the [[studies/42Warsaw/libft/index|Libft]] project in the [[studies/42Warsaw/index|42 curriculum]]. It's a function that splits a string into an array of substrings based on a specified delimiter character. It allocates memory dynamically for each substring and the array, ensuring the result is null-terminated.
+> **ft_split** is a function that splits a string into an array of substrings based on a specified delimiter character. It allocates memory dynamically for each substring and the array, ensuring the result is null-terminated.
 
 ![[attachments/excalidraw/ft_split.png]]
 ## Walkthrough

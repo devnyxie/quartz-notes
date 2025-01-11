@@ -11,7 +11,7 @@ import { paleSageTheme } from "./themes/pale_sage"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Tim's Notes",
+    pageTitle: "🪴 Tim's Garden",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
@@ -36,7 +36,7 @@ const config: QuartzConfig = {
           light: "light-plus",
           dark: "dark-plus",
         },
-        keepBackground: false,
+        keepBackground: true,
       }),
       Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
       Plugin.GitHubFlavoredMarkdown(),

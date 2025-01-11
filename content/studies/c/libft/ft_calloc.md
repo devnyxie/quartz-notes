@@ -4,7 +4,6 @@ tags:
 date: 2024-12-18
 ---
 >[!info]
-> **ft_calloc** is a function from the [[studies/42Warsaw/libft/index|Libft]] project in the [[/studies/42Warsaw/index|42 curriculum]].
 > - **malloc**: Allocates memory, but leaves it uninitialized (contains garbage values). You must manually initialize the memory before use to avoid errors. <br/>
 >   `| 1327 | 2481 | 5972 | 8430 | 9234 | <-- Leftover values (random binary)` <br/>
 >   Reading from uninitialized memory is **undefined behavior** in C, which means your program could crash, produce incorrect results, or behave unpredictably.

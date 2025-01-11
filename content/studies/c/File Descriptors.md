@@ -1,7 +1,7 @@
 ---
 tags:
   - c
-  - linux
+  - unix
 date: 2024-12-23
 ---
 

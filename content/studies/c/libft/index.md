@@ -1,10 +1,9 @@
 ---
-title: Libft
+title: libft
 date: 2024-12-18
 tags:
   - c
 ---
-The **Libft** project is a part of [[studies/42Warsaw/index|42 curriculum]].
 
 | Function Name | Short Description                                    |
 | ------------- | ---------------------------------------------------- |
@@ -17,7 +16,7 @@ The **Libft** project is a part of [[studies/42Warsaw/index|42 curriculum]].
 | ft_memset     | Fills memory with a constant byte                    |
 | ft_bzero      | Fills memory with zero bytes                         |
 | ft_memcpy     | Copies memory area                                   |
-| ft_memmove    | Copies memory area safely (handles overlap)          |
+| [ft_memmove](ft_memmove)    | Copies memory area safely (handles overlap)          |
 | ft_strlcpy    | Copies string with size limitation                   |
 | ft_strlcat    | Concatenates string with size limitation             |
 | ft_toupper    | Converts character to uppercase                      |
@@ -29,16 +28,16 @@ The **Libft** project is a part of [[studies/42Warsaw/index|42 curriculum]].
 | ft_memcmp     | Compares memory areas                                |
 | ft_strnstr    | Locates substring in string with length limitation   |
 | ft_atoi       | Converts string to integer                           |
-| ft_calloc     | Allocates and zeros memory                           |
+| [ft_calloc](ft_calloc)     | Allocates and zeros memory                           |
 | ft_strdup     | Creates duplicate of string using malloc             |
 | ft_substr     | Creates substring from string                        |
 | ft_strjoin    | Concatenates two strings                             |
 | ft_strtrim    | Trims specified characters from string               |
-| ft_split      | Splits string using delimiter character              |
-| ft_itoa       | Converts integer to string                           |
+| [ft_split](ft_split)      | Splits string using delimiter character              |
+| [ft_itoa](ft_itoa)       | Converts integer to string                           |
 | ft_strmapi    | Applies function to each character with index        |
 | ft_striteri   | Applies function to each character with index (void) |
 | ft_putchar_fd | Outputs character to file descriptor                 |
 | ft_putstr_fd  | Outputs string to file descriptor                    |
 | ft_putendl_fd | Outputs string with newline to file descriptor       |
-| ft_putnbr_fd  | Outputs integer to file descriptor                   |
+| [ft_putnbr_fd](ft_putnbr_fd)  | Outputs integer to file descriptor                   |

@@ -4,6 +4,7 @@ tags:
   - javascript
 title: Node.js Q&A
 ---
+![[attachments/node.js/Node.js_logo.svg|100]]
 # Event Loop
 An Event Loop is a loop that waits for events and then triggers a callback function when one of those events is detected. It is a mechanism that allows Node.js to perform non-blocking I/O operations, even though JavaScript is single-threaded.
 

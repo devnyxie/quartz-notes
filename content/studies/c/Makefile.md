@@ -11,7 +11,7 @@ A Makefile is a file that contains a set of rules used to build and manage a pro
 
 # Why use a Makefile?
 
-Let's say we have to compile a [[studies/42Warsaw/libft/index|libft]] library that consists of multiple source files. Instead of manually compiling each source file and linking them together, we can use a Makefile to automate the process.
+Let's say we have to compile a [[studies/c/libft/index|libft]] library that consists of multiple source files. Instead of manually compiling each source file and linking them together, we can use a Makefile to automate the process.
 
 
 # Practical Example (executable)

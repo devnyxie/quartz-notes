@@ -6,7 +6,7 @@ date: 2024-12-25
 ---
 ![[attachments/logos/debian_logo.webp|100]]
 
-The **Born2beRoot** project is a system administration exercise in the [[studies/42Warsaw/index|42 curriculum]] that introduces virtualization concepts. You will create a virtual machine using VirtualBox or UTM, set up a server with Debian or Rocky Linux, and follow strict configurations, including strong password policies, sudo rules, and a monitoring script. The mandatory tasks include configuring encrypted partitions, a secured SSH service, and a firewall.
+The **Born2beRoot** project is a system administration exercise that introduces virtualization concepts. You will create a virtual machine using VirtualBox or UTM, set up a server with Debian or Rocky Linux, and follow strict configurations, including strong password policies, sudo rules, and a monitoring script. The mandatory tasks include configuring encrypted partitions, a secured SSH service, and a firewall.
 
 The **bonus** involves setting up additional features, like **advanced partitioning**, a **WordPress website** with specific services, or another functional service of your choice. However, bonus evaluation requires the mandatory part to be <u>flawless</u>.
 

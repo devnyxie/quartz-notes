@@ -1,5 +1,5 @@
 ---
-title: 42Warsaw
+title: 42 Warsaw
 date: 2024-12-15
 ---
 

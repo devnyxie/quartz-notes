@@ -4,7 +4,6 @@ tags:
   - c
 ---
 > [!info]
-> **ft_memmove** is a function from the [[studies/42Warsaw/libft/index|Libft]] project in the [[studies/42Warsaw/index|42 curriculum]].
 > The function copies a block of memory from one location to another, <u>ensuring safe handling of overlapping source and destination areas</u> by using a temporary buffer. It guarantees the correct order of copying, unlike `memcpy`, which may corrupt data if the regions overlap.
 
 # Walkthrough
