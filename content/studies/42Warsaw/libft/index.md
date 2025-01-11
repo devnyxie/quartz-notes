@@ -1,7 +1,10 @@
 ---
 title: Libft
 date: 2024-12-18
+tags:
+  - c
 ---
+The **Libft** project is a part of [[studies/42Warsaw/index|42 curriculum]].
 
 | Function Name | Short Description                                    |
 | ------------- | ---------------------------------------------------- |

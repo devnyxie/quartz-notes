@@ -2,10 +2,10 @@
 date: 2024-12-21
 tags:
   - c
-  - libft
 ---
 >[!info] 
-> `itoa` converts an integer into its string representation. It handles both positive and negative numbers, allocates memory for the resulting string (including the null terminator), and returns the string.
+>**ft_itoa** is a function from the [[studies/42Warsaw/libft/index|Libft]] project in the [[studies/42Warsaw/index|42 curriculum]].
+>The function converts an integer into its string representation. It handles both positive and negative numbers, allocates memory for the resulting string (including the null terminator), and returns the string.
 # Walkthrough
 Here the logic is pretty straightforward. Our steps should be:
 1. get the len of the integer `N` 

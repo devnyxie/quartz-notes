@@ -1,5 +1,6 @@
 ---
-date: 2024-12-29
+title: 42Warsaw
+date: 2024-12-15
 ---
 
 ![[attachments/42Warsaw/photos/kickoff_photo.webp]]
@@ -10,7 +11,7 @@ I've decided to apply for 42 after a few months of searching for a job with no s
 
 # Piscine
 
-The first month was a blast. What about a month of speedrun through the base concepts of C? In short, it was like doing leetcode problems in C, every day for a month. I've learned a lot, and I've met a lot of great people. Finished that month with an 8 hour long exam, which was a bit stressful, but I've passed it with quite a good score, not to brag (66, highest was 72).
+The first month was a blast. What about a month of speedrun through the base concepts of C? In short, it was like doing leetcode problems in C, every day for a month. I've learned a lot, and I've met a lot of great people. Finished that month with an 8 hour long exam, which was a bit stressful, but I've passed it with quite a good score.
 
 # Studies
 

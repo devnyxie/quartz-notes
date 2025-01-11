@@ -2,11 +2,11 @@
 date: 2024-12-22
 tags:
   - c
-  - libft
 ---
 
 > [!info]
-> Outputs the integer ’n’ to the given [[studies/c/File Descriptors|File Descriptor]].
+> **ft_putnbr_fd** is a function from the [[studies/42Warsaw/libft/index|Libft]] project in the [[studies/42Warsaw/index|42 curriculum]].
+> The function outputs the integer ’n’ to the given [[studies/c/File Descriptors|File Descriptor]].
 
 ```c
 #include <unistd.h>
