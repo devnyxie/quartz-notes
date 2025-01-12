@@ -1,6 +1,6 @@
 ---
 tags:
-  - linux
+  - unix
   - sysadmin
 date: 2024-12-25
 ---
