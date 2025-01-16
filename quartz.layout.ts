@@ -44,6 +44,8 @@ export const defaultContentPageLayout: PageLayout = {
     Component.DesktopOnly(Component.Graph({
       localGraph: {
         linkDistance: 30,
+        depth: -1, // todo: switch to 1 later
+    
       },
       globalGraph: {
         linkDistance: 75,
@@ -51,7 +53,6 @@ export const defaultContentPageLayout: PageLayout = {
     })),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.DesktopOnly(Component.Backlinks()),
-    // Component.DesktopOnly(Component.TagList(),), 
   ],
 }
 
@@ -77,6 +78,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.DesktopOnly(Component.Graph({
       localGraph: {
         linkDistance: 30,
+        depth: -1, // todo: switch to 1 later
       },
       globalGraph: {
         linkDistance: 75,

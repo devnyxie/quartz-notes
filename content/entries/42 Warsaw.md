@@ -1,6 +1,9 @@
 ---
 title: 42 Warsaw
 date: 2024-12-15
+tags:
+    - c
+    - unix
 ---
 
 ![[attachments/42Warsaw/photos/kickoff_photo.webp]]
@@ -9,10 +12,6 @@ date: 2024-12-15
 
 I've decided to apply for 42 after a few months of searching for a job with no success, even with many personal projects in my portfolio. Truth be told, I did not have any high hopes - I went in only for a chance of getting a good internship, that's all.
 
-# Piscine
-
-The first month was a blast. What about a month of speedrun through the base concepts of C? In short, it was like doing leetcode problems in C, every day for a month. I've learned a lot, and I've met a lot of great people. Finished that month with an 8 hour long exam, which was a bit stressful, but I've passed it with quite a good score.
-
 # Studies
 
-After the piscine, I've started the actual studies. The projects are really interesting, and I've learned a lot from them - not only about programming, but also about working in a team, and about managing my time.
+The first few months of studying were a pleasant surprise. I learned so much about C, algorithms, Vim, advanced Linux concepts, and many other topics. I also met incredible people and had a lot of fun along the way. Perhaps most importantly, I discovered a lot about myself - I realized that I’m capable of achieving far more than I initially believed.

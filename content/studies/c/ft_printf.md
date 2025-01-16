@@ -13,7 +13,7 @@ Make sure to read the [intro](https://42-cursus.gitbook.io/guide/rank-01/ft_prin
 # Implementation
 
 
-```c
+```c {18}
 // ft_printf.c
 #include "ft_printf.h"
 
@@ -31,7 +31,7 @@ int	ft_printf(const char *str, ...)
 			str++;
 			if (*str == '\0')
 				break ;
-			ft_handle_specifiers(*str, &len, args);
+			ft_handle_specifiers(*str, &len, args); // handle c, s, p, d, i, u, x, X, %
 		}
 		else
 			len += write(1, str, 1);
