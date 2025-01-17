@@ -1,4 +1,5 @@
 ---
+title: Makefile
 tags:
   - c
 date: 2025-01-11

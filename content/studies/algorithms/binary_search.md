@@ -3,6 +3,7 @@ title: Binary Search
 tags:
   - c
   - algorithm
+date: 2025-01-16
 ---
 
 Binary search is a search algorithm that finds the position of a target value within a **sorted** array. <br/>
@@ -47,8 +48,16 @@ However, `left + (right - left)` will not overflow in this case:
 2147483647 + (2147483646 - 2147483647) = 2147483647 + (-1) = 2147483646
 ```
 
+# N of Iterations
 
-# Flow Example 1
+- 128 elements -> 7 iterations (log2(128) = 7)
+- 256 elements -> 8 iterations (log2(256) = 8)
+
+
+
+# Flow
+
+## Example 1
 
 ```c
 //                       ▼
@@ -60,14 +69,14 @@ int arr[] = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19};
     - `arr[mid] = 9`
     - `arr[mid] == target`, return `4`
 
-# Flow Example 2
+## Example 2
 
 
 
 1. **Iteration 1**:
     - `left = 0`, `right = 9`, `mid = 4, target = 19 (value)`
     ```c
-    // mid:                  ▼
+    //                       ▼
     int arr[] = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19};
     ```
     - `arr[mid] = 9`
@@ -75,7 +84,7 @@ int arr[] = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19};
 2. **Iteration 2**:
     - `left = 5`, `right = 9`, `mid = 7 (recalculated), target = 19 (value)`
     ```c
-    // mid:                             ▼
+    //                                  ▼
     int arr[] = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19};
     ```
     - `arr[mid] = 15`
@@ -83,7 +92,7 @@ int arr[] = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19};
 3. **Iteration 3**:
     - `left = 8`, `right = 9`, `mid = 8 (recalculated), target = 19 (value)`
     ```c
-    // mid:                                  ▼
+    //                                       ▼
     int arr[] = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19};
     ```
     - `arr[mid] = 17`
@@ -91,7 +100,7 @@ int arr[] = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19};
 4. **Iteration 4**:
     - `left = 9`, `right = 9`, `mid = 9 (recalculated), target = 19 (value)`
     ```c
-    // mid:                                      ▼
+    //                                           ▼
     int arr[] = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19};
     ```
     - `arr[mid] = 19`

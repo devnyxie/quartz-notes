@@ -1,6 +1,8 @@
 ---
 title: Two's Complement Form
 date: 2025-01-17
+tags:
+  - c
 ---
 Two's complement is a way of representing signed integers in binary. Here's how it differs from the standard binary representation in C:
 
