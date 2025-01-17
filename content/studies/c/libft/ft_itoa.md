@@ -56,7 +56,7 @@ char	*ft_itoa(int n)
 > [!question] Why we are using `long` for num, even though we accept `int` as a function parameter?
 > Let me explain:
 > - The range of `int` is from `-2147483648` to `2147483647`.
-> - When `n` is `-2147483648` (which is `INT_MIN`), converting it to positive would exceed the range of `int` because `2147483648` is out of the `int`range.
+> - When `n` is `-2147483648` (which is `INT_MIN`), converting it to positive would exceed the range of `int` because `2147483648` is out of the `int`range, therefore it would cause an [[studies/c/int_overflow|Integer Overflow]]
 > - By using `long`, which has a larger range, we can safely handle this conversion.
 # Filling the Result
 ```c

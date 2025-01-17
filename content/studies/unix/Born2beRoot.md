@@ -453,7 +453,7 @@ This line tells the system to run the `monitoring.sh` script every 10 minutes. S
 
 And that's it! You've successfully set up a monitoring script that logs all the necessary system information every 10 minutes 🎉
 
-![[good_job.gif|450]]
+![[attachments/gifs/frieren_good_job.gif|450]]
 
 # Bonus Part ⭐
 

@@ -11,7 +11,7 @@ import { paleSageTheme } from "./themes/pale_sage"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Tim's Garden",
+    pageTitle: "Tim's Notes",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,

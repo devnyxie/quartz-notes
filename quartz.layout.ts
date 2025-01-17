@@ -30,7 +30,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.RecentNotes({ showTags: false, limit: 3, title: "Activity Log" })),
+    Component.DesktopOnly(Component.RecentNotes({ showTags: false, limit: 5, title: "Activity Log" })),
     Component.DesktopOnly(Component.Explorer(
       {
         filterFn: (node) => {
@@ -64,7 +64,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.RecentNotes({ showTags: false, limit: 3, title: "Activity Log" })),
+    Component.DesktopOnly(Component.RecentNotes({ showTags: false, limit: 5, title: "Activity Log" })),
     Component.DesktopOnly(Component.Explorer(
       {
         filterFn: (node) => {

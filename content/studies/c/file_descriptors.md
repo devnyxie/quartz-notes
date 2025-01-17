@@ -3,6 +3,7 @@ tags:
   - c
   - unix
 date: 2024-12-23
+title: File Descriptors
 ---
 
 ![[attachments/c/Pasted image 20250108043416.webp]]

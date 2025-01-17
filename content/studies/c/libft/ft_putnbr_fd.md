@@ -5,7 +5,7 @@ tags:
 ---
 
 > [!info]
-> The function outputs the integer ’n’ to the given [[studies/c/File Descriptors|File Descriptor]].
+> The function outputs the integer ’n’ to the given [[studies/c/file_descriptors|File Descriptor]].
 
 ```c
 #include <unistd.h>
@@ -28,3 +28,6 @@ void ft_putnbr_fd(int n, int fd)
     char c = (n % 10) + '0';
     write(fd, &c, 1);
 }
+```
+
+We have to handle `INT_MIN` separately because the absolute value of `INT_MIN` is out of the range of `int`. Therefore, we cannot convert it to a positive number without causing an [[studies/c/int_overflow|Integer Overflow]].

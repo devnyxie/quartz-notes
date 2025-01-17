@@ -1,4 +1,5 @@
 ---
+title: Base Conversions
 date: 2025-01-08
 tags:
   - c
@@ -40,6 +41,18 @@ void to_binary(int n) {
     }
     printf("%d", n % 2);
 }
+// flow:
+// a. 42 > 1, spawn to_binary(21)
+// b. 21 > 1, spawn to_binary(10)
+// c. 10 > 1, spawn to_binary(5)
+// d. 5 > 1, spawn to_binary(2)
+// e. 2 > 1, spawn to_binary(1)
+// f. 1 !> 1, print 1 % 2 = 1
+// e. print 2 % 2 = 0
+// d. print 5 % 2 = 1
+// c. print 10 % 2 = 0
+// b. print 21 % 2 = 1
+// a. print 42 % 2 = 0
 
 int main(void) {
     int decimal = 42;
