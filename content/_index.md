@@ -3,7 +3,8 @@ title: "Homepage"
 tags: []
 date: 2024-12-17
 ---
-![[attachments/image-removebg-preview.webp|200]]
+
+![[attachments/anime-studio-ghibli-kurenai-no-buta-wallpaper-6b26dc7da3e10f2965146be97d4c7c90.webp]]
 
 Welcome! <br/>
 I’m Timothee. This is my little, minimalistic [digital garden](https://jzhao.xyz/posts/networked-thought) on the Internet — make yourself at home!

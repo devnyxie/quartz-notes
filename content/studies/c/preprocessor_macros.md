@@ -4,9 +4,6 @@ tags:
     - c
 date: 2025-01-22
 ---
-
-# What is a Preprocessor Macro?
-
 In C, a preprocessor macro is a directive that defines a symbolic name or a constant value. Macros are used to make the code more readable and maintainable by replacing repetitive code with a single line of code. The preprocessor replaces the macro with its definition **before** the code is compiled.
 
 # How to Define a Macro?
