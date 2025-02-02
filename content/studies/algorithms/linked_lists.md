@@ -1,7 +1,7 @@
 ---
 title: Linked Lists
 tags:
-  - c
+  - algorithm
 date: 2025-01-26
 ---
 Linked lists are a way to store a collection of elements. Each element in a linked list is called a node. A node contains two fields: a data field to store the element and a next field to point to the next node in the list. The last node in the list points to `NULL`.

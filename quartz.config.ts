@@ -19,7 +19,7 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "en-US",
-    baseUrl: "devnyxie.com",
+    baseUrl: "notes.devnyxie.com",
     ignorePatterns: ["private", "templates", ".obsidian", "Excalidraw"],
     defaultDateType: "created",
     generateSocialImages: true,
