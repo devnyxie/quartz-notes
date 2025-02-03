@@ -1,5 +1,5 @@
 ---
-title: "GNL: Efficient Code"
+title: "GNL: Efficient Buffer Management"
 tags:
   - c
 date: 2025-02-02

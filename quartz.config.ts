@@ -22,7 +22,7 @@ const config: QuartzConfig = {
     baseUrl: "notes.devnyxie.com",
     ignorePatterns: ["private", "templates", ".obsidian", "Excalidraw"],
     defaultDateType: "created",
-    generateSocialImages: true,
+    generateSocialImages: false,
     theme: defaultTheme,
   },
   plugins: {

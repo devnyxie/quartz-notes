@@ -44,7 +44,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.DesktopOnly(Component.Graph({
       localGraph: {
         linkDistance: 30,
-        depth: -1, // todo: switch to 1 later
+        depth: -1,
     
       },
       globalGraph: {
@@ -59,7 +59,7 @@ export const defaultContentPageLayout: PageLayout = {
 
 // components for pages that display lists of pages  (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
-  beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
+  beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta(),],
   left: [
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
@@ -79,7 +79,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.DesktopOnly(Component.Graph({
       localGraph: {
         linkDistance: 30,
-        depth: -1, // todo: switch to 1 later
+        depth: -1,
       },
       globalGraph: {
         linkDistance: 75,

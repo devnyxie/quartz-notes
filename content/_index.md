@@ -4,7 +4,10 @@ tags: []
 date: 2024-12-17
 ---
 
-![[attachments/anime-studio-ghibli-kurenai-no-buta-wallpaper-6b26dc7da3e10f2965146be97d4c7c90.webp]]
+![[attachments/image-removebg-preview (1).webp|300]]
+
+> [!quote]
+> Never apologise for being obsessed. Read all day. Work all night. Run for hours. Forget time exists. Be everywhere, but be a ghost. Turn off the world and create your own. Let craft become compulsion. Positive obsession is a gift, disguised as a curse.
 
 Welcome! <br/>
 I’m Timothee. This is my little, minimalistic [digital garden](https://jzhao.xyz/posts/networked-thought) on the Internet — make yourself at home!
