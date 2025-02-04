@@ -108,5 +108,73 @@ They were kind enough to provide us with a `t_point` structure that we can use t
 
 Looking at 2D array `zone` in `test.c`, I think we all already can see that the `flood_fill` function should fill the area recursively.
 
-> [!warning]
-> Article is still in progress. Check back later for the full solution!
+**Let's do it!**
+
+```c
+typedef struct  s_point
+{
+    int           x;
+    int           y;
+}               t_point;
+
+char get_val(char **area, t_point node){
+    return(area[node.y][node.x]);
+}
+
+void check_val(char **area, t_point node){
+    area[node.y][node.x] = 'F';
+}
+
+int is_valid(char **area, t_point size, t_point node, char c){
+    if (node.x < 0 || node.x >= size.x || node.y < 0 || node.y >= size.y)
+        return(-1);
+    char next_node_val = get_val(area, node);
+    if(next_node_val != c)
+        return(-1);
+    return(1);
+}
+
+void traverse(char **area, t_point size, t_point node, char c){
+    if(is_valid(area, size, node, c) == 1){
+        check_val(area, node);
+        t_point arr[] = {
+            {node.x, node.y+1}, //top
+            {node.x, node.y-1}, //bottom
+            {node.x+1, node.y}, // right
+            {node.x-1, node.y} // left
+        };
+        int i = 3;
+        while(i >= 0){
+            t_point next_node = arr[i];
+            traverse(area, size, next_node, c);
+            i--;
+        }
+    }
+}
+
+void flood_fill(char **area, t_point size, t_point begin){
+    char c = get_val(area, begin); // starting character
+    traverse(area, size, begin, c);
+}
+```
+
+Output with `size = {8, 5}` and `begin = {7, 4}`:
+
+```shell
+11111111
+10001001
+10010001
+10110001
+11100001
+
+FFFFFFFF
+F000F00F
+F00F000F
+F0FF000F
+FFF0000F
+```
+
+Looks good!
+
+> [!info]
+> Keep in mind that the size is 1-indexed, while the begin point is 0-indexed. This distinction might be confusing at first, especially since `size_t` is commonly used for size representations in C.
