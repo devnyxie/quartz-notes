@@ -1,18 +1,29 @@
-# Quartz v4
+# Personal Study Notes & Digital Garden 🌱
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+<img src="./content/attachments/banners/ghibli.webp" alt="drawing" width="200"/>
 
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
-Quartz v4 features a from-the-ground rewrite focusing on end-user extensibility and ease-of-use.
+> *Never apologise for being obsessed. Read all day. Work all night. Run for hours. Forget time exists. Be everywhere, but be a ghost. Turn off the world and create your own. Let craft become compulsion. Positive obsession is a gift, disguised as a curse.*
 
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
+This is my digital garden - a collection of interconnected notes, studies, and insights from my journey in software development and system administration.
 
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
+## 📚 Content Overview
 
-## Sponsors
+### Core Studies
+- **C Programming** - Implementation of various algorithms, data structures, and core concepts
+- **Unix/Linux**
 
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+## 🔧 Technical Implementation
+- Built with [Quartz](https://quartz.jzhao.xyz/)
+- Uses Markdown for content authoring
+- Supports interactive features like graph view and full-text search
+- Integrates with Obsidian for note management
+
+## 🚀 How to Use
+- Browse through topics in the explorer sidebar
+- Use search functionality to find specific topics
+- View connections between notes in the graph view
+- Navigate through interconnected concepts using wikilinks
+
+## License & Disclaimer
+
+This project is licensed under the MIT License, but everything under the `/content` directory is not included in this license. Everything under `/content` is my personal notes and studies and should not be used for any purpose other than personal reference.

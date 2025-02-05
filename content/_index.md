@@ -4,7 +4,7 @@ tags: []
 date: 2024-12-17
 ---
 
-![[attachments/image-removebg-preview (1).webp|300]]
+![[attachments/banners/ghibli.webp|300]]
 
 > [!quote]
 > Never apologise for being obsessed. Read all day. Work all night. Run for hours. Forget time exists. Be everywhere, but be a ghost. Turn off the world and create your own. Let craft become compulsion. Positive obsession is a gift, disguised as a curse.
