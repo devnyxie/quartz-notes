@@ -76,7 +76,7 @@ echo 'deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudf
 sudo apt-get update && sudo apt-get install cloudflared
 ```
 
-After you've successfully installed `cloudflared`, you should be able to run it using the following command:
+After you've successfully installed `cloudflared`, the following command should work:
 
 ```bash
 cloudflared --version
