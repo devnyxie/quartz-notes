@@ -23,7 +23,7 @@ When a process opens a file, the following steps occur to acquire a file descrip
 
 1. **Process Calls `open()` or Equivalent**:
    - The process requests to open a file by calling a system call like `open()`.
-2. **Kernel Interacts with the [[studies/c/inode_table|Inode Table]]**: 
+2. **Kernel Interacts with the [[studies/unix/inode_table|Inode Table]]**: 
    - The kernel looks up the file's **inode** using its **path** in the inode table to access the file's metadata (like permissions, type, and location on disk).
 3. **Kernel Updates the System-Wide File Table**:
    - The kernel creates a new **entry** in the system-wide file table.

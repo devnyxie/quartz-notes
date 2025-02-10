@@ -3,6 +3,7 @@ title: "Linked List: Bubble Sort"
 tags:
   - c
   - algorithm
+date: 2025-02-07
 ---
 
 This study discusses how to sort a linked list using the Bubble Sort algorithm, specifically for `sort_list` exercise from the 42 curriculum.
