@@ -92,3 +92,6 @@ int main(void) {
     return 0;
 }
 ```
+
+> [!info]
+> Why `'A' + remainder - 10`? Because the ASCII value of `A` is `65`, and we need to start from `10` to `15` for the hexadecimal digits `A-F`. By adding `A` (65) to the remainder, we get the correct ASCII value for the hexadecimal digit.

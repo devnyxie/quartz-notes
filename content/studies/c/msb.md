@@ -10,4 +10,4 @@ The **Most Significant Bit (MSB)** is the leftmost bit in a binary number that r
 For example, in an 8-bit signed integer:
 
 - **Decimal 5** → `00000101` (MSB is `0`)
-- **Decimal -5** → `11111011` (MSB is `1`, two's complement form)
+- **Decimal -5** → `11111011` (MSB is `1`, [[studies/c/twos_complement_form|two complement's form]])
