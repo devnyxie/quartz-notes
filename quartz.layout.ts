@@ -49,7 +49,7 @@ export const defaultContentPageLayout: PageLayout = {
       },
       globalGraph: {
         linkDistance: 75,
-        repelForce: 3.5,
+        repelForce: 2.0,
       },
     })),
     Component.DesktopOnly(Component.TableOfContents()),
@@ -84,6 +84,7 @@ export const defaultListPageLayout: PageLayout = {
       },
       globalGraph: {
         linkDistance: 75,
+        repelForce: 2.0,
       },
     })),
   ],

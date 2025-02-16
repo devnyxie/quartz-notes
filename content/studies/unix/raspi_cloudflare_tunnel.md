@@ -1,5 +1,5 @@
 ---
-title: "Raspi 4B: Setup & Cloudflare Tunnel" 
+title: "Raspi Part 1: Setup & Cloudflare Tunnel" 
 tags:
   - unix
   - sysadmin
@@ -121,12 +121,24 @@ tunnel: <Tunnel-UUID> # tunnel ID
 credentials-file: /root/.cloudflared/<Tunnel-UUID>.json
 ```
 
+```yaml
+tunnel: <Tunnel-Name>
+credentials-file: <Path-to-JSON-File>
+ingress:
+  - hostname: <hostname>
+    service: <service URL>
+
+  - service: http_status:404
+```
+
 In my case it's:
 
 ```yaml
-url: http://localhost:8080
-tunnel: 18006ba-5dc2-0000-8111-c625b010169
+tunnel: demo-tunnel
 credentials-file: /home/devnyxie/.cloudflared/18006ba-5dc2-0000-8111-c625b010169.json
+ingress:
+  - hostname: demo.devnyxie.com
+    service: http_status:404
 ```
 
 Finally, we should add a CNAME record to our Cloudflare DNS settings. This will allow us to access our Raspberry Pi using a custom domain. In my case, I've added a CNAME record for `demo.devnyxie.com` pointing to the tunnel domain, which is `18006ba-5dc2-0000-8111-c625b010169.cfargotunnel.com`.
@@ -151,38 +163,19 @@ If everything is configured correctly, you should see your tunnel running! 🚀
 
 ## Hosting Something
 
-Now, we need to host something on our Raspberry Pi. I've decided to host my notes webapp, but you can choose anything you want.
+Now, we need to host something on our Raspberry Pi. I've decided to host my web notes, but you can choose anything you want.
 
-For example, we can host a simple web server using JavaScript:
+For example, if you want to host some static content (a website), you can do the following:
 
 ```bash
 # install nodejs and npm
 sudo apt-get install nodejs npm
 # install serve package in order to host a simple web server
 npm install -g serve
-```
-
-Create a file with our server code:
-
-```bash
-# server.js
-const express = require('express');
-const app = express();
-const port = 8080;
-
-app.get('/', (req, res) => {
-  res.send('Hello, world!');
-});
-
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
-```
-
-Run the server and the tunnel:
-
-```bash
-node server.js & cloudflared tunnel run demo-tunnel
+# create a simple server
+echo "Hello from Raspberry!" > index.html
+# start the server and then the tunnel
+serve -s & cloudflared tunnel run demo-tunnel
 ```
 
 Now, you should be able to access your Raspberry Pi using your custom domain! Good work friend! ☀️
