@@ -16,7 +16,7 @@ I've bought a Raspberry Pi 4b like a year ago, and I've always wanted to host so
 
 But now, I've finally managed to find some time for it, and I've decided share my journey with you.
 
-![[attachments/raspi.jpg]]
+![[attachments/unix/raspi.jpg]]
 
 First of all, Raspberry Pi 4B is a great device for hosting small projects, and it's not pricy at all. I'm using a 8GB RAM version, and it must be more than enough for our needs.
 
@@ -51,7 +51,7 @@ Mine is kinda hot after an update, but I guess it's normal (right?). We can inst
 # Cloudflare Tunnel
 
 Now, we need to install Cloudflare Tunnel on our Raspberry Pi. This will allow us to avoid the original IPv4 approach, and tunnel our traffic through Cloudflare's network. This is a great way to protect our server from any cyber attacks, and it's also a great way to **avoid dealing with local ISPs**.
-![[attachments/cloudflare_raspi_tunnel.png]]
+![[attachments/excalidraw/cloudflare_raspi_tunnel.png]]
 
 ## Installation
 

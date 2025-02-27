@@ -457,7 +457,7 @@ And that's it! You've successfully set up a monitoring script that logs all the 
 
 # Bonus Part ⭐
 
-![[attachments/Screen_Shot_2025-01-05_at_21.39.39-removebg-preview.webp|400]]
+![[attachments/logos/Screen_Shot_2025-01-05_at_21.39.39-removebg-preview.webp|400]]
 
 The bonus part of the Born2beRoot project involves setting up additional features on your server.
 - **Advanced Partitioning**: We've already set up advanced partitioning in the mandatory part. ✅

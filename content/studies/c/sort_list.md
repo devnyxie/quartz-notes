@@ -47,7 +47,7 @@ int ascending(int a, int b)
 ```
 
 # Explanation
-![[attachments/Untitled-2025-01-08-0424.webp|600]]
+![[attachments/excalidraw/Untitled-2025-01-08-0424.webp|600]]
 
 The `sort_list` function takes a linked list and a comparison function as arguments. The comparison function is used to determine the order in which the elements of the list should be sorted (ascending, descending, etc.).
 

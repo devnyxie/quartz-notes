@@ -5,7 +5,7 @@ tags:
   - c
   - algorithm
 ---
-![[attachments/Untitled-2025-01-08-0424-1.webp|300]]
+![[attachments/excalidraw/Untitled-2025-01-08-0424-1.webp|300]]
 
 Today we will discuss how to implement a **Dynamic** Stack in C using a [[studies/algorithms/linked_lists|linked list]] approach. We will also implement the basic stack operations, such as `push`, `pop`, `peek` etc.
 

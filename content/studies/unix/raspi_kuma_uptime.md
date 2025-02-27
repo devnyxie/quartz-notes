@@ -15,7 +15,7 @@ First of all, we need to install Docker on our Raspberry Pi. The installation wa
 
 # Kuma Uptime Page
 Kuma is a simple, modern, and beautiful uptime monitor. It's open-source, and it's perfect for our needs. We can easily set it up using Docker, and it's also quite easy to configure.
-![[attachments/Pasted image 20250216215200.png]]
+![[attachments/unix/Pasted image 20250216215200.png]]
 ## Installation
 To be honest, it might be one of the most straightforward installations I've ever done. We just need to run the following command:
 
@@ -39,7 +39,7 @@ After running the command, we should be able to access our Kuma Uptime Page by v
 After you have added your first monitor, you should create a public Status Page. Choose a path, e.g., `status.devnyxie.com`, and customize the page by adding a logo, a title, and a description if you want.
 
 Mine looks like this:
-![[attachments/Pasted image 20250216213822.png]]
+![[attachments/unix/Pasted image 20250216213822.png]]
 
 
 # Cloudflare Tunnel Configuration

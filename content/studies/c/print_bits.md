@@ -22,7 +22,7 @@ Example, if you pass 2 to print_bits, it will print "00000010"
 
 Whole point of this exercise is to extract the digits of the binary representation of a number. It's no array, so we can't access the digits directly by index or a pointer. So what can we do instead?
 
-![[attachments/ft_atoi_base 1.png|250]]
+![[attachments/excalidraw/ft_atoi_base 1.png|250]]
 
 We can repeat this process for each digit by shifting the bits to the right and masking the least significant bit (discarding the rest). We can do this in a loop until all bits are printed. Point is, for each digit the amount of bits we need to shift is NOT the same. We need to shift the bits to the right by `i` positions, where `i` is the index is the maximum index of the digit for the needed digit. For example;
 - First digit at index 0: shift by 7

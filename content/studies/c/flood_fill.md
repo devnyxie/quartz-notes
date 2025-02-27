@@ -11,7 +11,7 @@ date: 2025-02-04
 
 In this study, we will discuss how to implement the Flood Fill algorithm in C, but not in the context of an image. Instead, we will use a 2D array to represent the image.
 
-![[attachments/Untitled-2025-01-08-0424 (2).webp|600]]
+![[attachments/excalidraw/Untitled-2025-01-08-0424 (2).webp|600]]
 
 # Subject
 

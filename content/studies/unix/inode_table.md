@@ -5,7 +5,7 @@ tags:
 date: 2025-01-19
 ---
 
-![[attachments/Pasted image 20250119171550.webp|500]]
+![[attachments/excalidraw/Pasted image 20250119171550.webp|500]]
 
 # What is an Inode Table?
 

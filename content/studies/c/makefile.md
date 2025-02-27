@@ -4,7 +4,7 @@ tags:
   - c
 date: 2025-01-11
 ---
-![[attachments/Untitled-2025-01-08-0424 (1).webp|700]]
+![[attachments/excalidraw/Untitled-2025-01-08-0424 (1).webp|700]]
 
 # What is a Makefile?
 
@@ -78,7 +78,7 @@ The flow in detail:
     # gcc -Wall -Wextra -Werror -c main.c -o main.o
     # gcc -Wall -Wextra -Werror -c utils.c -o utils.o
     ```
-	 ![[attachments/Frame 1(2).webp]]
+	 ![[attachments/excalidraw/Frame 1(2).webp]]
     **Make** uses this rule to build `main.o` and `utils.o`.
 1. Now that `main.o` and `utils.o` are built, **Make** can continue building `$(OUT)` (program) by linking `main.o` and `utils.o` to create the executable program:
     ```makefile

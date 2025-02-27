@@ -4,10 +4,16 @@ tags: []
 date: 2024-12-17
 ---
 
-![[attachments/banners/ghibli.webp|300]]
+![[attachments/pinterest/finale.jpg|400]]
 
 > [!quote]
+> At the end of the day, there is nothing you can't accomplish. Believe in yourself.
+
+%%
+![[attachments/banners/ghibli.webp|300]]
+> [!quote]
 > Never apologise for being obsessed. Read all day. Work all night. Run for hours. Forget time exists. Be everywhere, but be a ghost. Turn off the world and create your own. Let craft become compulsion. Positive obsession is a gift, disguised as a curse.
+%%
 
 Welcome! <br/>
 I’m Timothee. This is my little, minimalistic [digital garden](https://jzhao.xyz/posts/networked-thought) on the Internet — make yourself at home!

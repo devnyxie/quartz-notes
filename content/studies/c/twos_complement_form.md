@@ -6,7 +6,7 @@ tags:
 ---
 Two's complement is a way of representing signed integers in binary. Here's how it differs from the standard binary representation in C:
 
-![[attachments/Two's Complement Form.webp|300]]
+![[attachments/excalidraw/Two's Complement Form.webp|300]]
 
 ---
 

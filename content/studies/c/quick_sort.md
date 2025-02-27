@@ -14,7 +14,7 @@ Quick Sort is a popular sorting algorithm that uses the **Divide and Conquer** s
 # How Quick Sort Works
 
 Quick Sort works by selecting a **pivot** element from the array and partitioning the other elements into two sub-arrays according to whether they are less than or greater than the pivot. Then, it recursively sorts the sub-arrays using the same technique.
-![[attachments/Untitled-2025-01-08-0424 (1).png]]
+![[attachments/excalidraw/Untitled-2025-01-08-0424 (1).png]]
 
 # Implementation
 

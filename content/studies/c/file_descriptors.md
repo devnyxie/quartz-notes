@@ -36,7 +36,7 @@ When a process opens a file, the following steps occur to acquire a file descrip
    - The kernel finds the **lowest available index** in the process's **file descriptor table**.
    - It creates a new entry in the process's table that points to the new (or existing) **system-wide file table entry**.
 
-![[attachments/fd_acquisition-1.webp]]
+![[attachments/excalidraw/fd_acquisition-1.webp]]
 
 > [!warning]
 > The flow of acquiring file descriptors is not universal, and it may vary depending on the operating system. Even the concept of file descriptors may not be present in some operating systems.
