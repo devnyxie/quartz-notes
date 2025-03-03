@@ -3,6 +3,7 @@ title: Inode Table
 tags:
   - unix
 date: 2025-01-19
+description: "An inode (index node) table is a data structure in Unix-like file systems that stores key information about each file, except its name and data."
 ---
 
 ![[attachments/excalidraw/Pasted image 20250119171550.webp|500]]

@@ -2,10 +2,11 @@
 date: 2024-12-22
 tags:
   - c
+description: The ft_putnbr_fd function outputs the integer N to the given File Descriptor.
 ---
 
 > [!info]
-> The function outputs the integer ’n’ to the given [[studies/c/file_descriptors|File Descriptor]].
+> The function outputs the integer N to the given [[studies/c/file_descriptors|File Descriptor]].
 
 ```c
 #include <unistd.h>

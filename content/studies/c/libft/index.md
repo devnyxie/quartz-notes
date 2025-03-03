@@ -3,6 +3,7 @@ title: libft
 date: 2024-12-18
 tags:
   - c
+description: The libft project is a library of functions that mimic the behavior of the standard C library functions.
 ---
 
 | Function Name | Short Description                                    |

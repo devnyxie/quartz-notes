@@ -4,6 +4,7 @@ tags:
   - unix
   - sysadmin
 date: 2025-02-10
+description: "Setting up a Raspberry Pi 4B, configuring Cloudflare Tunnel in order to avoid the original IPv4 approach and hosting a simple website on it."
 ---
 
 # Topic

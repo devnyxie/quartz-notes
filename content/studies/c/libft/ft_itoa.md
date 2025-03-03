@@ -2,6 +2,7 @@
 date: 2024-12-21
 tags:
   - c
+description: The ft_itoa function converts an integer into its string representation.
 ---
 >[!info]
 >The function converts an integer into its string representation. It handles both positive and negative numbers, allocates memory for the resulting string (including the null terminator), and returns the string.

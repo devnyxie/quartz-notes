@@ -3,6 +3,7 @@ title: Base Conversions
 date: 2025-01-08
 tags:
   - c
+description: Learn how to convert numbers to different bases in C.
 ---
 
 # What is a base?

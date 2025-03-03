@@ -4,6 +4,7 @@ tags:
   - math
   - algorithm
 date: 2024-12-25
+description: Logarithms are the inverse of exponentiation. In computer science, we mostly use base-2 logarithms (log₂) because computers work with binary.
 ---
 
 

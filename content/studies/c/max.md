@@ -4,9 +4,8 @@ tags:
   - c
   - algorithm
 date: 2025-01-18
+description: "The max() function is a simple function that returns the maximum value in an array of integers in C."
 ---
-
-# Introduction
 
 The `max()` function is a simple function that returns the maximum value in an array of integers in C.
 

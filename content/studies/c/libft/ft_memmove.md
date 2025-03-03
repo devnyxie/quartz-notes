@@ -2,6 +2,7 @@
 date: 2024-12-22
 tags:
   - c
+description: The ft_memmove function copies a block of memory from one location to another, ensuring safe handling of overlapping source and destination areas.
 ---
 > [!info]
 > The function copies a block of memory from one location to another, <u>ensuring safe handling of overlapping source and destination areas</u> by using a temporary buffer. It guarantees the correct order of copying, unlike `memcpy`, which may corrupt data if the regions overlap.

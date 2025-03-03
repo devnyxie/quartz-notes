@@ -3,7 +3,9 @@ tags:
   - c
 date: 2025-02-09
 title: print_bits.c
+description: "Write a function that takes a byte, and prints it in binary."
 ---
+
 ```
 Assignment name  : print_bits
 Expected files   : print_bits.c

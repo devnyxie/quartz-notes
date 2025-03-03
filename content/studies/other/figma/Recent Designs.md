@@ -3,6 +3,7 @@ title: Figma Designs
 tags:
   - design
 date: 2024-12-18
+description: A collection of my recent Figma designs
 ---
 
 Some of my recent Figma designs ~

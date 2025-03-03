@@ -6,8 +6,6 @@ tags:
 date: 2025-02-03
 ---
 
-# Introduction
-
 **fprime** is a simple algorithm that finds and prints all the prime factors of a given number. A prime factor is a number that is a prime number and divides the given number without leaving a remainder.
 
 In order to find the prime factors of a number, we need to divide the number by the smallest prime number (2) and continue dividing the result by the smallest prime number until the result is 1.

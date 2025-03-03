@@ -1,5 +1,9 @@
 ---
+title: "Minimalism"
+tags:
+  - personal
 date: 2024-12-21
+description: "Minimalism is not about having less, it's about making room for what truly matters."
 ---
 
 # Backstory

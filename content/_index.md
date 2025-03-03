@@ -2,6 +2,7 @@
 title: "Homepage"
 tags: []
 date: 2024-12-17
+description: "Welcome to my digital garden!"
 ---
 
 ![[attachments/pinterest/finale.jpg|400]]

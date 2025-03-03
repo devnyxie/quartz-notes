@@ -5,9 +5,13 @@ tags:
   - sysadmin
   - docker
 date: 2025-02-16
+description: "Setting up a Kuma Uptime Page on our Raspberry Pi 4B, and configuring it to be accessible from the internet using the same Cloudflare Tunnel we've set up in the previous part."
 ---
 
-# Topic
+
+
+# Topic:
+
 Setting up a Kuma Uptime Page on our Raspberry Pi 4B, and configuring it to be accessible from the internet using the same Cloudflare Tunnel we've set up in the [[studies/unix/cloudflare_tunnel|previous part]].
 
 # Docker Setup

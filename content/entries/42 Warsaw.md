@@ -4,6 +4,7 @@ date: 2024-12-15
 tags:
     - c
     - unix
+description: My journey at 42 Warsaw
 ---
 
 ![[attachments/42Warsaw/photos/kickoff_photo.webp]]

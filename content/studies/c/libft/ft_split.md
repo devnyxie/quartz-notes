@@ -2,6 +2,7 @@
 tags:
   - c
 date: 2024-12-18
+description: The ft_split function splits a string into an array of substrings based on a specified delimiter character.
 ---
 
 >[!info]

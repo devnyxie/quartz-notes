@@ -2,6 +2,7 @@
 tags:
   - c
 date: 2024-12-18
+description: The ft_calloc function allocates memory for an array of nmemb elements of size bytes each and initializes the memory to zero.
 ---
 >[!info]
 > - **malloc**: Allocates memory, but leaves it uninitialized (contains garbage values). You must manually initialize the memory before use to avoid errors. <br/>

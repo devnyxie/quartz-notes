@@ -6,7 +6,6 @@ tags:
 date: 2025-02-16
 ---
 
-# Introduction
 TMUX is a terminal multiplexer that allows you to run multiple terminal sessions in a single window. It's a great tool for sysadmins, developers, and anyone who works in the terminal. In this study, we'll learn how to use TMUX and some of its basic features.
 ![[attachments/unix/Pasted image 20250216223253.png]]
 Let's imagine the following scenario: you're working on a server via SSH, and you need to run multiple commands at the same time. You could open multiple SSH sessions, but that can get messy. With TMUX, you can create multiple panes in a single window and run different commands in each pane.

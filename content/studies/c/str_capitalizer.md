@@ -6,8 +6,6 @@ tags:
 date: 2025-02-01
 ---
 
-# Introduction
-
 **str_capitalizer** is a simple algorithm that capitalizes the first letter of each word in a string.
 
 > [!warning]

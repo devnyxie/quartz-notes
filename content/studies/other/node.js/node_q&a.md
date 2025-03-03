@@ -3,6 +3,7 @@ date: 2024-12-28
 tags:
   - javascript
 title: Node.js Q&A
+description: A collection of questions and answers about Node.js
 ---
 ![[attachments/node.js/Node.js_logo.svg|100]]
 # Event Loop

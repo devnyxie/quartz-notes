@@ -5,19 +5,16 @@ tags:
 date: 2025-02-02
 ---
 
+The Get Next Line (GNL) is a project in C programming that requires reading a file line by line, while handling multiple file descriptors and maintaining the state of each file descriptor.
+
+In this study, we will discuss how to write an optimized version of the GNL project.
+
 # Prerequisites
 - [Static Variables in C](/studies/c/static_variables)
 - [Structs in C](/studies/c/structs)
 - [Preprocessor Macros in C](/studies/c/preprocessor_macros)
 - [File Descriptors in C](/studies/c/file_descriptors)
 - [Inode Table](/studies/unix/inode_table)
-
-
-# Introduction
-
-The Get Next Line project is a project in C programming that requires reading a file line by line, while handling multiple file descriptors and maintaining the state of each file descriptor.
-
-In this study, we will discuss how to write an optimized version of the GNL project.
 
 # Implementation
 

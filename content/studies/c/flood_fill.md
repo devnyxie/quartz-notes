@@ -5,7 +5,6 @@ tags:
   - algorithm
 date: 2025-02-04
 ---
-# Introduction
 
 **Flood Fill** is an algorithm that is used to color a connected area of pixels in an image. The algorithm starts at a given point and "floods" the area with a specific color. It is used in the "bucket fill" tool of paint programs to fill connected, similarly-colored areas with a different color.
 

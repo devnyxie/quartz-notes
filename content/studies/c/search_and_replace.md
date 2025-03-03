@@ -4,9 +4,8 @@ tags:
   - c
   - algorithm
 date: 2025-02-03
+description: "Search and Replace is a simple algorithm that replaces all occurrences of a given character in a string with another character."
 ---
-
-# Introduction
 
 **Search and Replace** is a simple algorithm that replaces all occurrences of a given character in a string with another character.
 
