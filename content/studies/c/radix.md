@@ -4,6 +4,7 @@ tags:
   - algorithm
   - c
 date: 2025-03-03
+description: Learn how to implement Radix Sort in C using Linked Lists.
 ---
 
 **Radix Sort** is a non-comparative sorting algorithm that sorts numbers by processing individual digits. It is a linear time complexity algorithm that is used to sort numbers in a fixed range. The algorithm works by sorting numbers based on their individual digits, starting from the least significant digit to the most significant digit.
