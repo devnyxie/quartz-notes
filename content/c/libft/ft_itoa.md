@@ -12,7 +12,7 @@ Here the logic is pretty straightforward. Our steps should be:
     - +1 if `N=0`, still the len of `0` is `1`
     - +1 if `N<0`, space for the minus sign.
 2. allocate memory for string "result" -> `(len+1)*sizeof(char)`
-   - memory should be initialized, since we should loop until the negative sign `-` when filling the `result`; garbage values may interfere. Therefore I'll use [ft_calloc()](studies/c/libft/ft_calloc).
+   - memory should be initialized, since we should loop until the negative sign `-` when filling the `result`; garbage values may interfere. Therefore I'll use [ft_calloc()](c/libft/ft_calloc.md).
 4. (loop) assign last digit of `(N%10)+'0'` to `result[len--]`
 ## Number Length
 ```c
@@ -57,7 +57,7 @@ char	*ft_itoa(int n)
 > [!question] Why we are using `long` for num, even though we accept `int` as a function parameter?
 > Let me explain:
 > - The range of `int` is from `-2147483648` to `2147483647`.
-> - When `n` is `-2147483648` (which is `INT_MIN`), converting it to positive would exceed the range of `int` because `2147483648` is out of the `int`range, therefore it would cause an [[studies/c/int_overflow|Integer Overflow]]
+> - When `n` is `-2147483648` (which is `INT_MIN`), converting it to positive would exceed the range of `int` because `2147483648` is out of the `int`range, therefore it would cause an [[c/int_overflow|Integer Overflow]]
 > - By using `long`, which has a larger range, we can safely handle this conversion.
 # Filling the Result
 ```c

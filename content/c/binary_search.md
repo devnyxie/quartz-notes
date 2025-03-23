@@ -38,7 +38,7 @@ int binarySearch(int arr[], int size, int target) {
 }
 ```
 
-`left + (right - left)` is used to avoid potential [[studies/c/int_overflow|Integer Overflow]] (See **Detailed Review** section) when `left` and `right` are large integers.
+`left + (right - left)` is used to avoid potential [[c/int_overflow|Integer Overflow]] (See **Detailed Review** section) when `left` and `right` are large integers.
 For example, if `left` is `INT_MAX` (2147483647) and `right` is `INT_MAX - 1` (2147483646), then `left + right` will overflow:
 ```text
 2147483647 + 2147483646 = -3

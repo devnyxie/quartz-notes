@@ -72,7 +72,7 @@ Thus, `-5` is represented as `11111011`.
 - Arithmetic:
     - Two's complement enables seamless addition/subtraction of positive and negative numbers without requiring special handling.
 - Overflow:
-    - For signed integers, exceeding the range (e.g., adding to `INT_MAX`) causes **wraparound** in two's complement. More on [[studies/c/int_overflow|Integer Overflow]].
+    - For signed integers, exceeding the range (e.g., adding to `INT_MAX`) causes **wraparound** in two's complement. More on [[c/int_overflow|Integer Overflow]].
 
 ---
 

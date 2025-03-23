@@ -61,7 +61,7 @@ So our result is `11111111 11111111 11111111 11111101`.
 
 The result is `4294967293` in unsigned binary. However, since the result is stored in a 32-bit int (signed), it wraps around modulo `2^32`, because the range of int is limited to [−2^31,2^31−1].
 
-Because the [[studies/c/msb|MSB]] of the result is 1, the binary value `11111111 11111111 11111111 11111101` is negative. [[studies/c/twos_complement_form|Two's Complement]] is used to determine its value.
+Because the [[c/msb|MSB]] of the result is 1, the binary value `11111111 11111111 11111111 11111101` is negative. [[c/twos_complement_form|Two's Complement]] is used to determine its value.
 
 1. Invert all bits: `11111111 11111111 11111111 11111101` -> `00000000 00000000 00000000 00000010`
 2. Add `1`: `00000000 00000000 00000000 00000010` -> `00000000 00000000 00000000 00000011`

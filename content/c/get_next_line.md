@@ -10,11 +10,11 @@ The Get Next Line (GNL) is a project in C programming that requires reading a fi
 In this study, we will discuss how to write an optimized version of the GNL project.
 
 # Prerequisites
-- [Static Variables in C](/studies/c/static_variables)
-- [Structs in C](/studies/c/structs)
-- [Preprocessor Macros in C](/studies/c/preprocessor_macros)
-- [File Descriptors in C](/studies/c/file_descriptors)
-- [Inode Table](/studies/unix/inode_table)
+- [Static Variables in C](c/static_variables.md)
+- [Structs in C](c/structs.md)
+- [Preprocessor Macros in C](c/preprocessor_macros.md)
+- [File Descriptors in C](c/file_descriptors.md)
+- [Inode Table](unix/inode_table.md)
 
 # Implementation
 

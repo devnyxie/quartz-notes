@@ -7,7 +7,7 @@ tags:
 ---
 ![[attachments/excalidraw/Untitled-2025-01-08-0424-1.webp|300]]
 
-Today we will discuss how to implement a **Dynamic** Stack in C using a [[studies/algorithms/linked_lists|linked list]] approach. We will also implement the basic stack operations, such as `push`, `pop`, `peek` etc.
+Today we will discuss how to implement a **Dynamic** Stack in C using a [[c/linked_lists|linked list]] approach. We will also implement the basic stack operations, such as `push`, `pop`, `peek` etc.
 
 - [Wiki - Stack (abstract data type)](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))
 - [What is Stack Data Structure?](https://www.geeksforgeeks.org/introduction-to-stack-data-structure-and-algorithm-tutorials/)
@@ -18,7 +18,7 @@ let's begin;
 
 # Stack Data Type
 
-A stack is a linear data [[studies/c/structs|structure]] that follows the **Last In First Out (LIFO)** principle. The last element that is added to the stack is the first element to be removed. We will implement a stack using a linked list, in order to have a dynamic, resizable stack.
+A stack is a linear data [[c/structs|structure]] that follows the **Last In First Out (LIFO)** principle. The last element that is added to the stack is the first element to be removed. We will implement a stack using a linked list, in order to have a dynamic, resizable stack.
 
 # Implementation
 

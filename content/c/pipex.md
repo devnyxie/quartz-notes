@@ -17,8 +17,6 @@ The `|` symbol is used to pipe the output of one program to the input of another
 
 ```shell
 ls | wc -l
-# Output
-3
 ```
 
 ## `<` & `<<` Symbol
@@ -79,7 +77,7 @@ int access(const char *pathname, int mode);
 ```
 
 > [!info]
-> If you remember the [[get_next_line|Get Next Line]] project,  we used `open()` function to open a file without checking if we have sufficient permissions to open that file, and using `access()` would have been a great addition to that project for additional error handling! ⭐
+> If you remember the [[c/get_next_line|Get Next Line]] project,  we used `open()` function to open a file without checking if we have sufficient permissions to open that file, and using `access()` would have been a great addition to that project for additional error handling! ⭐
 
 The `mode` specifies the accessibility check(s) to be performed, and is either the value `F_OK`, or a mask consisting of the bitwise OR of one or more of `R_OK`, `W_OK`, and `X_OK`. `F_OK` tests for the existence of the file. `R_OK`, `W_OK`, and `X_OK` test whether the file exists and grants read, write, and execute permissions, respectively.
 
@@ -95,7 +93,7 @@ The `mode` specifies the accessibility check(s) to be performed, and is either t
 ```
 
 - Success: `access()` returns 0.
-- Failure: `access()` returns -1 and sets [[errno]] to indicate the error.
+- Failure: `access()` returns -1 and sets [[c/errno]] to indicate the error.
 
 ## `dup2()`
 
@@ -118,7 +116,7 @@ printf("Hello, world!\n");
 In this example, the output of the `printf()` function will be written to the file descriptor `fd`, which is associated with the file `file`. In other words, the output of the `printf()` function will be written to that file.
 
 - Success: `dup2()` returns the new file descriptor.
-- Failure: `dup2()` returns -1 and sets [[errno]] to indicate the error.
+- Failure: `dup2()` returns -1 and sets [[c/errno]] to indicate the error.
 
 ## `pipe()`
 
@@ -177,7 +175,7 @@ int main() {
 Pipes behave FIFO(First in First out), Pipe behave like a queue data structure. Size of read and write don’t have to match here. We can write 512 bytes at a time but we can read only 1 byte at a time in a pipe.
 
 - Success: `pipe()` returns 0.
-- Failure: `pipe()` returns -1 and sets [[errno]] to indicate the error.
+- Failure: `pipe()` returns -1 and sets [[c/errno]] to indicate the error.
 
 ## `fork()`
 

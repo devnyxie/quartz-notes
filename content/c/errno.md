@@ -1,7 +1,6 @@
 ---
 tags:
   - c
-  - unix
 date: 2025-03-08
 title: errno in C
 description: Learn how to use the errno variable in C to handle errors.

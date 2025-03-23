@@ -9,7 +9,7 @@ description: Learn how to implement Radix Sort in C using Linked Lists.
 
 **Radix Sort** is a non-comparative sorting algorithm that sorts numbers by processing individual digits. It is a linear time complexity algorithm that is used to sort numbers in a fixed range. The algorithm works by sorting numbers based on their individual digits, starting from the least significant digit to the most significant digit.
 
-Radix Sort typically uses [[studies/c/counting_sort|Counting Sort]] as a subroutine to sort numbers based on each digit. Counting Sort efficiently sorts numbers in a specific range, making it well-suited for digit-based sorting in Radix Sort.
+Radix Sort typically uses [[c/counting_sort|Counting Sort]] as a subroutine to sort numbers based on each digit. Counting Sort efficiently sorts numbers in a specific range, making it well-suited for digit-based sorting in Radix Sort.
 
 When I was implementing Radix Sort in C, I did not use Counting Sort as a subroutine. Instead, I implemented the algorithm using Linked Lists to store numbers in each **bucket**. This approach is less efficient than using Counting Sort, but it is easier to understand and implement.
 
@@ -22,9 +22,9 @@ In short, in order to sort the array, we are creating 10 (0-9) buckets and stori
 Before trying to implement Radix Sort, you should be familiar with it's concepts and how it works. You should also have a good understanding of Linked Lists and how to implement them in C.
 
 - [Radix Sort](https://en.wikipedia.org/wiki/Radix_sort)
-- [[studies/algorithms/linked_lists|Linked Lists]]
+- [[c/linked_lists|Linked Lists]]
 - [Linked Lists in C](https://www.geeksforgeeks.org/data-structures/linked-list/)
-- [[studies/c/counting_sort|Counting Sort]]
+- [[c/counting_sort|Counting Sort]]
 # Implementation
 
 First, let's create the Linked List structure to store numbers in each bucket:

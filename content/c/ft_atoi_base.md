@@ -16,7 +16,7 @@ For example:
 - base "0123456789ABCDEF" (16) will convert the string `2A` to `42`
 - base "0123456789ABCDEF" (16) will convert the string `7F` to `127`
 
-We already know how to convert a string to an integer in base 10, and how to [[studies/c/base_conversions|convert base 10 to another base]]. We can combine these two to implement the `ft_atoi_base` function.
+We already know how to convert a string to an integer in base 10, and how to [[c/base_conversions|convert base 10 to another base]]. We can combine these two to implement the `ft_atoi_base` function.
 
 One thing to keep in mind is that the base can be any number between 2 and 16. We will implement a helper function to check if a character is a digit in the given base:
 

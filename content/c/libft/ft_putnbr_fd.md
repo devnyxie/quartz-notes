@@ -6,7 +6,7 @@ description: The ft_putnbr_fd function outputs the integer N to the given File D
 ---
 
 > [!info]
-> The function outputs the integer N to the given [[studies/c/file_descriptors|File Descriptor]].
+> The function outputs the integer N to the given [[c/file_descriptors|File Descriptor]].
 
 ```c
 #include <unistd.h>
@@ -31,4 +31,4 @@ void ft_putnbr_fd(int n, int fd)
 }
 ```
 
-We have to handle `INT_MIN` separately because the absolute value of `INT_MIN` is out of the range of `int`. Therefore, we cannot convert it to a positive number without causing an [[studies/c/int_overflow|Integer Overflow]].
+We have to handle `INT_MIN` separately because the absolute value of `INT_MIN` is out of the range of `int`. Therefore, we cannot convert it to a positive number without causing an [[c/int_overflow|Integer Overflow]].

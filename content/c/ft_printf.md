@@ -6,7 +6,7 @@ date: 2025-01-09
 
 `printf` is a function in the C standard library that allows you to print formatted output to the console. It is a variadic function, which means it can take a variable number of arguments. The first argument is a format string that specifies how to format the output, and the remaining arguments are the values to be printed.
 
-Make sure to read the [intro](https://42-cursus.gitbook.io/guide/rank-01/ft_printf) and understand how [Variadic Functions](variadic_functions) work. This will help you understand how to implement your own version of `printf`.
+Make sure to read the [intro](https://42-cursus.gitbook.io/guide/rank-01/ft_printf) and understand how [Variadic Functions](c/variadic_functions.md) work. This will help you understand how to implement your own version of `printf`.
 
 # Implementation
 

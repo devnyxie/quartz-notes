@@ -13,8 +13,8 @@ It's been a while, `push_swap` is quite a project.
 
 # Requirements
 
-- [Radix Sort](studies/c/radix)
-- [[studies/c/stack|Stacks]]
+- [Radix Sort](c/radix.md)
+- [[c/stack|Stacks]]
 - Willingness to learn
 
 # Walkthrough

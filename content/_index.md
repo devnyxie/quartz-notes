@@ -21,4 +21,6 @@ I’m Timothee. This is my little, minimalistic [digital garden](https://jzhao.x
 
 At the moment, I'm studying C/C++ at [[entries/42 Warsaw|42 Warsaw]] and planning to specialize in Cybersecurity, building on my solid background in development.
 
+You can start off by checking all [tags](/tags).
+
 [GitHub](https://github.com/devnyxie) / [LinkedIn](https://www.linkedin.com/in/talmkg) / [Portfolio](https://www.devnyxie.com/projects)

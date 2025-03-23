@@ -33,7 +33,7 @@ When you see `log₂(8) = 3`, it means:
 | 64         | 6       | 2⁶ = 64   |
 | 128        | 7       | 2⁷ = 128  |
 
-This is particularly important for algorithms like [Binary Search](studies/algorithms/binary_search.md) where we divide the input size by 2 at each step.
+This is particularly important for algorithms like [Binary Search](c/binary_search.md) where we divide the input size by 2 at each step.
 
 ## Calculating log₂
 

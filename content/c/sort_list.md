@@ -11,7 +11,7 @@ This study discusses how to sort a linked list using the Bubble Sort algorithm, 
 
 # Prerequisites
 
-- [Linked List](/studies/algorithms/linked_lists)
+- [Linked List](c/linked_lists.md)
 
 # Subject
 
