@@ -30,7 +30,12 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.RecentNotes({ showTags: false, limit: 5, title: "Activity Log" })),
+    Component.DesktopOnly(Component.RecentNotes({ showTags: false, limit: 5, title: "Activity Log",
+      filter: (file) => {
+        const blacklist = new Set(["private", "drafts", "polish"]); // Add folder names to blacklist
+        return !blacklist.has((file.slug ?? "").split("/")[0]); // Exclude files in blacklisted folders
+      },
+    })),
     Component.DesktopOnly(Component.Explorer(
       {
         filterFn: (node) => {
@@ -66,7 +71,12 @@ export const defaultListPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.RecentNotes({ showTags: false, limit: 5, title: "Activity Log" })),
+    Component.DesktopOnly(Component.RecentNotes({ showTags: false, limit: 5, title: "Activity Log",
+      filter: (file) => {
+        const blacklist = new Set(["private", "drafts", "polish"]); // Add folder names to blacklist
+        return !blacklist.has((file.slug ?? "").split("/")[0]); // Exclude files in blacklisted folders
+      },
+     })),
     Component.DesktopOnly(Component.Explorer(
       {
         filterFn: (node) => {
