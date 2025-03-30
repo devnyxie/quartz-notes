@@ -268,8 +268,8 @@ int main() {
         exit(EXIT_FAILURE);
     }
 
-    if (cpid == 0) {    /* Child reads from pipe */
-        close(pipefd[1]);          /* Close unused write end */
+    if (cpid == 0) {
+        close(pipefd[1]);
 
         while (read(pipefd[0], &buf, 1) > 0)
             write(STDOUT_FILENO, &buf, 1);
@@ -278,11 +278,11 @@ int main() {
         close(pipefd[0]);
         _exit(EXIT_SUCCESS);
 
-    } else {            /* Parent writes to pipe */
-        close(pipefd[0]);          /* Close unused read end */
+    } else {
+        close(pipefd[0]);
         write(pipefd[1], "hello world\n", 12);
-        close(pipefd[1]);          /* Reader will see EOF */
-        wait(NULL);                /* Wait for child */
+        close(pipefd[1]);
+        wait(NULL);
         exit(EXIT_SUCCESS);
     }
 }
@@ -293,5 +293,141 @@ There is no magic here; on line 14 we split our function into two processes. The
 > [!warning] Why do we close file descriptors on line 21 and 31?
 > Every process inherits a copy of all open file descriptors when fork() is called.
 This means that after fork(), both the parent and child have access to both pipe ends (pipefd[0] and pipefd[1]). However, each process only needs one end of the pipe. Keeping both open can lead to problems, such as preventing EOF detection or simply wasting resources. To avoid these issues, the parent and child processes should close the ends of the pipe that they don't need.
+
+## `waitpid()`
+
+The `waitpid()` system call suspends the calling process until a child specified by pid argument has changed state. The pid argument can specify a specific child process, or it can be set to -1 to wait for any child process. The options argument can be set to 0 to wait for any child process, or it can be set to WNOHANG to return immediately if no child process has exited.
+
+```c
+pid_t waitpid(pid_t pid, int *status, int options);
+```
+
+The `pid` parameter can be:
+- `-1`: Wait for any child process
+- `> 0`: Wait for the specific child process with that PID
+- `0`: Wait for any child process in the same process group as the caller
+- `< -1`: Wait for any child process whose process group ID equals the absolute value of pid
+
+The `options` parameter is usually one of:
+- `0`: Block until a child terminates
+- `WNOHANG`: Return immediately if no child has exited
+
+You can also use these macros to check the exit status:
+- `WIFEXITED(status)`: True if the child terminated normally
+- `WEXITSTATUS(status)`: Returns the exit status of the child if it terminated normally
+
+Example:
+```c
+int status;
+pid_t child_pid = fork();
+
+if (child_pid == 0) {
+    // Child process
+    exit(42);
+} else {
+    // Parent process
+    waitpid(child_pid, &status, 0);
+    
+    if (WIFEXITED(status)) {
+        printf("Child exited with status %d\n", WEXITSTATUS(status));
+    }
+}
+```
+
+## `wait()`
+
+The `wait()` system call is a simplified version of `waitpid()`. It suspends the calling process until one of its child processes terminates.
+
+```c
+pid_t wait(int *status);
+```
+
+This is equivalent to calling:
+```c
+waitpid(-1, status, 0);
+```
+
+Example:
+```c
+int status;
+pid_t child_pid = fork();
+
+if (child_pid == 0) {
+    // Child process
+    exit(0);
+} else {
+    // Parent process
+    wait(&status);
+    printf("Child process terminated\n");
+}
+```
+
+## `execve()`
+
+The `execve()` system call replaces the current process image with a new process image specified by the path argument. This is the function that actually runs commands in your pipex project.
+
+```c
+int execve(const char *pathname, char *const argv[], char *const envp[]);
+```
+
+- `pathname`: Path to the executable file
+- `argv`: Array of argument strings passed to the new program
+- `envp`: Array of strings, conventionally of the form key=value, which are passed as environment to the new program
+
+Important: If `execve()` is successful, it **never returns** because the calling process image is replaced by the new process image. If it fails, it returns -1 and sets errno.
+
+Example:
+```c
+char *args[] = {"ls", "-l", NULL};
+char *env[] = {NULL};
+
+if (fork() == 0) {
+    // Child process
+    execve("/bin/ls", args, env);
+    // If execve returns, it failed
+    perror("execve failed");
+    exit(EXIT_FAILURE);
+} else {
+    // Parent process
+    wait(NULL);
+}
+```
+
+> [!note]
+> In practice, you might want to use functions like `execvp()` which searches the PATH for the executable, or `execlp()` which has a different parameter format but also searches the PATH.
+
+## `unlink()`
+
+The `unlink()` function deletes a name from the filesystem. If that name was the last link to a file and no processes have the file open, the file is deleted and the space it was using is made available for reuse.
+
+```c
+int unlink(const char *pathname);
+```
+
+This is particularly useful for temporary files that should be automatically removed when your program exits.
+
+Example:
+```c
+// Create a temporary file
+int fd = open("temp_file", O_CREAT | O_RDWR, 0644);
+write(fd, "Hello, world!\n", 14);
+
+// Use the file...
+
+// Delete the file
+unlink("temp_file");
+close(fd);
+```
+
+- Success: `unlink()` returns 0.
+- Failure: `unlink()` returns -1 and sets errno to indicate the error.
+
+# Implementing Pipex
+
+Now that you understand the basic functions needed for the project, let's see how you might implement the core functionality of the pipex program. The goal is to replicate the behavior of the shell command:
+
+```shell
+< infile cmd1 | cmd2 > outfile
+```
 
 **To be continued...**

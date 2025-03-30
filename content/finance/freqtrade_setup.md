@@ -94,6 +94,23 @@ Locate `pairlists` in the config file and replace the content with the following
 ],
 ```
 
+and:
+
+```json
+"pair_whitelist": [
+    "BTC/USDT",
+    "ETH/USDT",
+    "LTC/USDT",
+    "ADA/USDT",
+    "XRP/USDT",
+    "DOGE/USDT",
+    "DOT/USDT",
+    "LINK/USDT",
+    "UNI/USDT",
+    "SOL/USDT"
+],
+```
+
 Step 6: Backtest the configuration
 
 ```bash
