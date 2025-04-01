@@ -2,6 +2,7 @@
 title: "GNL: Efficient Buffer Management"
 tags:
   - c
+  - project
 date: 2025-02-02
 ---
 

@@ -4,6 +4,7 @@ date: 2025-03-20
 tags:
   - c
   - unix
+  - project
 description: "Learn how to implement shell pipes in C using low-level process management, file descriptors, and inter-process communication."
 ---
 

@@ -3,6 +3,7 @@ title: "push_swap: Bitwise Radix Sort"
 tags:
   - algorithm
   - c
+  - project
 date: 2025-03-10
 description: "The Bitwise Radix Sort implementation for the push_swap project."
 ---

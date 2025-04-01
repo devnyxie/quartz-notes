@@ -5,4 +5,4 @@ date: 2025-03-25
 tags:
   - polish
 ---
-![[множ_число-1.jpg]]
+![[attachments/polish/множ_число-1.jpg]]

@@ -1,6 +1,7 @@
 ---
 tags:
   - c
+  - project
 date: 2025-01-09
 ---
 
