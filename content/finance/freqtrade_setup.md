@@ -11,7 +11,7 @@ Yeah. It was unexpected for me as well. I'm not a fan of gambling and prefer sta
 
 [Freqtrade](https://www.freqtrade.io/en/stable) is a free and open-source crypto trading bot that allows you to automate your trading strategies. It is written in Python and has a very active community. I'm new to this, so I will be sharing my journey with you. I hope you will find it interesting.
 
-![[attachments/Pasted image 20250323030101.png|400]]
+![[attachments/finance/freqtrade.png|400]]
 
 > [!danger]
 > This is not financial advice. I am not a financial advisor. I am just a software engineer who is trying to learn new things. Please do your own research before making any financial decisions.
