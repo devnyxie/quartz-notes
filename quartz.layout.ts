@@ -49,12 +49,22 @@ export const defaultContentPageLayout: PageLayout = {
     Component.DesktopOnly(Component.Graph({
       localGraph: {
         linkDistance: 30,
-        depth: -1,
+        depth: 1,
     
       },
       globalGraph: {
-        linkDistance: 75,
-        repelForce: 2.0,
+        linkDistance: 30,
+        repelForce: 5,
+        drag: true,
+        zoom: true,
+        depth: -1,
+        scale: 0.9,
+        centerForce: 0.3,
+        fontSize: 0.6,
+        opacityScale: 1,
+        showTags: true,
+        removeTags: [],
+        focusOnHover: true,
       },
     })),
     Component.DesktopOnly(Component.TableOfContents()),
