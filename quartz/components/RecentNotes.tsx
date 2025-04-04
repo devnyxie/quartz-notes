@@ -25,6 +25,9 @@ const defaultOptions = (cfg: GlobalConfiguration): Options => ({
   sort: byDateAndAlphabetical(cfg),
 })
 
+
+
+
 export default ((userOpts?: Partial<Options>) => {
   const RecentNotes: QuartzComponent = ({
     allFiles,
@@ -43,7 +46,7 @@ export default ((userOpts?: Partial<Options>) => {
             const title = page.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title
             const tags = page.frontmatter?.tags ?? []
 
-            return (
+            const standardRecentLi = (
               <li class="recent-li">
                 <div class="section">
                   <div class="desc">
@@ -74,7 +77,42 @@ export default ((userOpts?: Partial<Options>) => {
                   )}
                 </div>
               </li>
+            );
+
+            const minimalRecentLi = (
+              <li class="recent-li" style={{ "margin": "0px" }}>
+                <div class="section">
+                  <div class="desc">
+                    <h3>
+                      <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal">
+                        {title}
+                      </a>
+                    </h3>
+                  </div>
+                  {page.dates && (
+                    <p class="meta" style={{ "font-size": "15px" }}>
+                      <Date date={getDate(cfg, page)!} locale={cfg.locale} />
+                    </p>
+                  )}
+                  {opts.showTags && (
+                    <ul class="tags">
+                      {tags.map((tag) => (
+                        <li>
+                          <a
+                            class="internal tag-link"
+                            href={resolveRelative(fileData.slug!, `tags/${tag}` as FullSlug)}
+                          >
+                            {tag}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </li>
             )
+
+            return minimalRecentLi;
           })}
         </ul>
         {opts.linkToMore && remaining > 0 && (
@@ -84,7 +122,6 @@ export default ((userOpts?: Partial<Options>) => {
             </a>
           </p>
         )}
-      
       </div>
     )
   }

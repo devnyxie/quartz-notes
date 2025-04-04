@@ -4,8 +4,11 @@
   display: flex;
   flex-direction: column;
 
-  &.desktop-only {
-    // max-height: 40%;
+  overflow-y: hidden;
+  min-height: 1.2rem;
+  flex: 0 1 auto;
+  &:has(button.toc-header.collapsed) {
+    flex: 0 1 1.2rem;
   }
 }
 
@@ -53,29 +56,10 @@ ul.toc-content {
     color: var(--dark);
     opacity: 0.35;
     transition:
-      max-height 0.35s ease,
-      visibility 0s linear 0.35s;
-    visibility: hidden;
-  }
-
-  &.collapsed > .overflow::after {
-    opacity: 0;
-  }
-
-  & ul {
-    list-style: none;
-    margin: 0.5rem 0;
-    padding: 0;
-    & > li > a {
-      color: var(--dark);
-      opacity: 0.4;
-      // opacity: 0.35;
-      // transition:
-      //   0.5s ease opacity,
-      //   0.3s ease color;
-      // &.in-view {
-      //   opacity: 0.75;
-      // }
+      0.5s ease opacity,
+      0.3s ease color;
+    &.in-view {
+      opacity: 0.75;
     }
   }
 

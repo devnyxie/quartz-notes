@@ -5,7 +5,9 @@ date: 2024-12-17
 description: "Welcome to my digital garden!"
 ---
 
+%%
 ![[attachments/pinterest/finale.jpg|400]]
+%%
 
 > [!quote]
 > At the end of the day, there is nothing you can't accomplish. Believe in yourself.
@@ -21,6 +23,4 @@ I’m Timothee. This is my little, minimalistic [digital garden](https://jzhao.x
 
 At the moment, I'm studying C/C++ at [[entries/42 Warsaw|42 Warsaw]] and planning to specialize in Cybersecurity, building on my solid background in development.
 
-You can start off by checking all [tags](/tags).
-
-[GitHub](https://github.com/devnyxie) / [LinkedIn](https://www.linkedin.com/in/talmkg) / [Portfolio](https://www.devnyxie.com/projects)
+[GitHub](https://github.com/devnyxie) / [LinkedIn](https://www.linkedin.com/in/talmkg) / [Portfolio](tags/project)

@@ -6,15 +6,9 @@ export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
   afterBody: [],
-  footer: Component.Footer(
-    // {
-    //   links: {
-    //     GitHub: "https://github.com/devnyxie",
-    //     "Resume": "https://devnyxie.notion.site/resume",
-    //     "Portfolio": "https://devnyxie.com/projects",
-    //   },
-    // }
-),
+  footer: Component.Footer({
+    links: {},
+  }),
 }
 
 // components for pages that display a single page (e.g. a single note)
@@ -31,28 +25,27 @@ export const defaultContentPageLayout: PageLayout = {
   left: [
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
-    Component.Search(),
-    Component.Darkmode(),
-    Component.DesktopOnly(Component.RecentNotes({ showTags: false, limit: 5, title: "Activity Log",
-      filter: (file) => {
-        const blacklist = new Set(["private", "drafts", "polish"]); // Add folder names to blacklist
-        return !blacklist.has((file.slug ?? "").split("/")[0]); // Exclude files in blacklisted folders
+    Component.Flex({
+      components: [
+        {
+          Component: Component.Search(),
+          grow: true,
+        },
+        { Component: Component.Darkmode() },
+      ],
+    }),
+    Component.Explorer({
+      filterFn: (node) => {
+        const omit = new Set(["authoring content", "tags", "hosting"])
+        return !omit.has((node.slug ?? "").split("/")[0]);
       },
-    })),
-    Component.DesktopOnly(Component.Explorer(
-      {
-        filterFn: (node) => {
-          const omit = new Set(["entries"])
-          return !omit.has(node.name.toLowerCase())
-      },
-      }
-    )),
+    }),
   ],
   right: [
-    Component.DesktopOnly(Component.Graph({
+    Component.Graph({
       localGraph: {
         linkDistance: 30,
-        depth: 1,
+        depth: 2,
     
       },
       globalGraph: {
@@ -69,46 +62,29 @@ export const defaultContentPageLayout: PageLayout = {
         removeTags: [],
         focusOnHover: true,
       },
-    })),
+    }),
     Component.DesktopOnly(Component.TableOfContents()),
-    Component.DesktopOnly(Component.Backlinks()),
-    Component.DesktopOnly(Component.TagIndex()),
+    Component.Backlinks(),
+    Component.DesktopOnly(Component.TagIndex())
   ],
 }
 
 // components for pages that display lists of pages  (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
-  beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta(),],
+  beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
   left: [
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
-    Component.Search(),
-    Component.Darkmode(),
-    Component.DesktopOnly(Component.RecentNotes({ showTags: false, limit: 5, title: "Activity Log",
-      filter: (file) => {
-        const blacklist = new Set(["private", "drafts", "polish"]); // Add folder names to blacklist
-        return !blacklist.has((file.slug ?? "").split("/")[0]); // Exclude files in blacklisted folders
-      },
-     })),
-    Component.DesktopOnly(Component.Explorer(
-      {
-        filterFn: (node) => {
-          const omit = new Set(["entries"])
-          return !omit.has(node.name.toLowerCase())
-      },
-      }
-    ))
+    Component.Flex({
+      components: [
+        {
+          Component: Component.Search(),
+          grow: true,
+        },
+        { Component: Component.Darkmode() },
+      ],
+    }),
+    Component.Explorer(),
   ],
-  right: [
-    Component.DesktopOnly(Component.Graph({
-      localGraph: {
-        linkDistance: 30,
-        depth: -1,
-      },
-      globalGraph: {
-        linkDistance: 75,
-        repelForce: 2.0,
-      },
-    })),
-  ],
+  right: [],
 }

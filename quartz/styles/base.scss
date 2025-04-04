@@ -202,6 +202,7 @@ a {
       box-sizing: border-box;
       padding: $topSpacing 2rem 2rem 2rem;
       display: flex;
+      // personal_adjustment
       // height: 100vh;
       position: sticky;
     }
@@ -592,6 +593,7 @@ ol.overflow {
   }
 }
 
+// personal_adjustment
 .katex-display {
   // overflow-x: auto;
   // overflow-y: hidden;

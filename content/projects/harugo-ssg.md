@@ -22,4 +22,4 @@ Once you confirm, a Harugo-customized Next.js base will be created and configure
 
 
 > [!warning]
-> This project is incomplete. I run into many issues with the synchronization of the components, project structure and especially theming. I will try to finish this project in the future, but for now, it is really usable.
+> This project is incomplete. I run into many issues with the synchronization of the components, project structure and especially theming. I will try to finish this project in the future, but for now, it is not really usable.
