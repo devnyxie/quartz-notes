@@ -34,6 +34,15 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
+    Component.DesktopOnly(Component.RecentNotes({ 
+      showTags: false, 
+      limit: 3, 
+      title: "Recent Notes",
+      filter: (file) => {
+        const blacklist = new Set(["private", "drafts", "polish"]);
+        return !blacklist.has((file.slug ?? "").split("/")[0]);
+      },
+    })),
     Component.Explorer({
       filterFn: (node) => {
         const omit = new Set(["authoring content", "tags", "hosting"])

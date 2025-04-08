@@ -88,13 +88,13 @@ const config: QuartzConfig = {
       Plugin.Assets(),
       Plugin.Static(),
       Plugin.NotFoundPage(),
-      // Plugin.CustomOgImages({
-      //   colorScheme: "lightMode",
-      //   width: 1200,
-      //   height: 630,
-      //   excludeRoot: false,
-      //   imageStructure: defaultImage,
-      // }),
+      Plugin.CustomOgImages({
+        colorScheme: "lightMode",
+        width: 1200,
+        height: 630,
+        excludeRoot: false,
+        imageStructure: defaultImage,
+      }),
     ],
   },
 }
