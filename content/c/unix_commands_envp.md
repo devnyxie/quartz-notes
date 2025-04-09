@@ -199,7 +199,8 @@ char	*get_cmd_path(char *cmd, char **envp)
     if (!paths)
         return (NULL);
     result = search_cmd_path(paths, cmd);
-    free_2d(paths);
+	if (!result)
+		free_2d(paths);
     return (result);
 }
 ```
