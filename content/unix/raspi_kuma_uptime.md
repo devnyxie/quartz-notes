@@ -12,7 +12,7 @@ description: "Setting up a Kuma Uptime Page on our Raspberry Pi 4B, and configur
 
 # Topic:
 
-Setting up a Kuma Uptime Page on our Raspberry Pi 4B, and configuring it to be accessible from the internet using the same Cloudflare Tunnel we've set up in the [[studies/unix/cloudflare_tunnel|previous part]].
+Setting up a Kuma Uptime Page on our Raspberry Pi 4B, and configuring it to be accessible from the internet using the same Cloudflare Tunnel we've set up in the [[unix/raspi_cloudflare_tunnel|previous part]].
 
 # Docker Setup
 First of all, we need to install Docker on our Raspberry Pi. The installation was quite straightforward, but keep in mind you should add your user to the `docker` group and preferably logout and login again to apply the changes.
@@ -48,7 +48,7 @@ Mine looks like this:
 
 # Cloudflare Tunnel Configuration
 
-Now that we have our Kuma Uptime Page running on our Raspberry Pi, we can configure our Cloudflare Tunnel to make it accessible from the internet. Since we've already set up the tunnel in the [[studies/unix/cloudflare_tunnel|previous part]], we just need to modify the `~/.cloudflared/config.yml` file and restart the `cloudflared` service. `:D`
+Now that we have our Kuma Uptime Page running on our Raspberry Pi, we can configure our Cloudflare Tunnel to make it accessible from the internet. Since we've already set up the tunnel in the [[unix/raspi_cloudflare_tunnel|previous part]], we just need to modify the `~/.cloudflared/config.yml` file and restart the `cloudflared` service. `:D`
 
 
 Here is the configuration we've stopped on in the previous part:

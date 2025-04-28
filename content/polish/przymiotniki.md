@@ -9,8 +9,8 @@ tags:
 ---
 
 # Przymiotniki - прилагательные
-Przymiotniki to słowa, które opisują rzeczowniki. W języku polskim przymiotniki zgadzają się z rzeczownikami w rodzaju, liczbie i [[tags/przypadki|przypadku]].
 
+Przymiotniki to słowa, które opisują rzeczowniki. W języku polskim przymiotniki zgadzają się z rzeczownikami w rodzaju, liczbie i [[tags/przypadki|przypadku]].
 
 ## Rodzaje przymiotników
 
@@ -34,6 +34,3 @@ W liczbie mnogiej przymiotniki również zmieniają swoją formę:
 3. To jest **małe** dziecko. (rodzaj nijaki, liczba pojedyncza)
 4. Oni są **wysocy**. (rodzaj męskoosobowy, liczba mnoga)
 5. Te kwiaty są **piękne**. (rodzaj niemęskoosobowy, liczba mnoga)
-
-
-to-be-completed

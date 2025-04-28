@@ -55,7 +55,7 @@ As you may have guessed, we will be using the `PATH` variable to find the full p
 
 > [!warning]
 > 1. All code is norminette compliant, therefore may be slightly hard to grasp at first.
-> 2. We assume that [[c/libft]] is imported: `ft_strjoin`, `ft_split`, `ft_strncmp` is used in this code.
+> 2. We assume that [[c/libft/index|libft]] is imported: `ft_strjoin`, `ft_split`, `ft_strncmp` is used in this code.
 
 ## Start with the `main` function
 

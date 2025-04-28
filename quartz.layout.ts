@@ -35,16 +35,17 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.DesktopOnly(Component.RecentNotes({ 
-      showTags: false, 
-      limit: 3, 
-      title: "Recent Notes",
-      filter: (file) => {
-        const blacklist = new Set(["private", "drafts", "polish"]);
-        return !blacklist.has((file.slug ?? "").split("/")[0]);
-      },
-    })),
+    // Component.DesktopOnly(Component.RecentNotes({ 
+    //   showTags: false, 
+    //   limit: 3, 
+    //   title: "Recent Notes",
+    //   filter: (file) => {
+    //     const blacklist = new Set(["private", "drafts", "polish"]);
+    //     return !blacklist.has((file.slug ?? "").split("/")[0]);
+    //   },
+    // })),
     Component.Explorer({
+      // folderClickBehavior: "collapse",
       filterFn: (node) => {
         const omit = new Set(["authoring content", "tags", "hosting"])
         return !omit.has((node.slug ?? "").split("/")[0]);

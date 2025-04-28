@@ -30,7 +30,7 @@ int main() {
 ```
 
 ## Linked Lists
-Structs can also be used to create [[studies/c/linked_lists|Linked Lists]] :D
+Structs can also be used to create [[c/linked_lists|Linked Lists]] :D
 
 ```c
 #include <stdio.h>

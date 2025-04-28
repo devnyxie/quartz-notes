@@ -7,5 +7,4 @@ tags:
   - słówka
   - gramatyka
 ---
-
-to-be-completed
+![[attachments/Adobe Scan 27 Apr 2025 (2)_1.jpg|500]]
