@@ -20,9 +20,13 @@ jobs:
     steps:
       # 1) start ssh-agent & load deploy key
       - name: Load SSH key
-        uses: webfactory/ssh-agent@v0.9.0
+        uses: webfactory/ssh-agent@v0.9.1
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      # 3) (optional) if your submodule origin was HTTPS, switch it to SSH
+      - name: Ensure submodule URL is SSH
+        run: git submodule set-url content git@github.com:devnyxie/obsidian-vault.git
 
       # 2) checkout repo + recursive submodules via SSH
       - name: Checkout source and submodules
@@ -30,11 +34,6 @@ jobs:
         with:
           fetch-depth: 0
           submodules: recursive
-          ssh: true
-
-      # 3) (optional) if your submodule origin was HTTPS, switch it to SSH
-      - name: Ensure submodule URL is SSH
-        run: git submodule set-url content git@github.com:devnyxie/obsidian-vault.git
 
       # 4) build
       - uses: actions/setup-node@v4
