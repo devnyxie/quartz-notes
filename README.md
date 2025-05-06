@@ -9,3 +9,20 @@ This is my digital garden - a collection of interconnected notes, studies, and i
 # License & Disclaimer
 
 This project is licensed under the MIT License, but everything under the `/content` directory is not included in this license. Everything under `/content` is my personal notes and studies and should not be used for any purpose other than personal reference.
+
+# Usage
+
+## Pushing
+
+```bash
+git submodule update --remote content
+git add content
+git commit -m "Update content"
+git push
+```
+
+## Cloning
+
+```bash
+git clone --recurse-submodules git@github.com:devnyxie/quartz-notes.git
+```

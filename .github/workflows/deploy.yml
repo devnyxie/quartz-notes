@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - v4
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -24,16 +25,16 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      # 3) (optional) if your submodule origin was HTTPS, switch it to SSH
-      - name: Ensure submodule URL is SSH
-        run: git submodule set-url content git@github.com:devnyxie/obsidian-vault.git
-
       # 2) checkout repo + recursive submodules via SSH
       - name: Checkout source and submodules
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           submodules: recursive
+
+      # 3) (optional) if your submodule origin was HTTPS, switch it to SSH
+      - name: Ensure submodule URL is SSH
+        run: git submodule set-url content git@github.com:devnyxie/obsidian-vault.git
 
       # 4) build
       - uses: actions/setup-node@v4
