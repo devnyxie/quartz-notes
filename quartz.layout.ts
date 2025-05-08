@@ -46,13 +46,15 @@ export const defaultContentPageLayout: PageLayout = {
     //     return !blacklist.has((file.slug ?? "").split("/")[0]);
     //   },
     // })),
-    Component.Explorer({
-      // folderClickBehavior: "collapse",
-      filterFn: (node) => {
-        const omit = new Set(["authoring content", "tags", "hosting"])
-        return !omit.has((node.slug ?? "").split("/")[0]);
-      },
-    }),
+    Component.Explorer(
+    //   {
+    //   folderClickBehavior: "collapse",
+    //   filterFn: (node) => {
+    //     const omit = new Set(["authoring content", "drafts", "private",]);
+    //     return !omit.has((node.slug ?? "").split("/")[0]);
+    //   },
+    // }
+  ),
   ],
   right: [
     Component.Graph({
@@ -97,7 +99,14 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer(
+      // {
+      //   filterFn: (node) => {
+      //     const omit = new Set(["authoring content", "drafts", "private",]);
+      //     return !omit.has((node.slug ?? "").split("/")[0]);
+      //   },
+      // }
+    ),
   ],
   right: [],
 }

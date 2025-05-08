@@ -18,7 +18,7 @@ const config: QuartzConfig = {
     },
     locale: "en-US",
     baseUrl: "notes.devnyxie.com",
-    ignorePatterns: ["private", "templates", ".obsidian", "Excalidraw", "Templates"],
+    ignorePatterns: ["private", "Private", "templates", "Templates", ".obsidian", "Excalidraw"],
     defaultDateType: "published",
     theme: {
       fontOrigin: "googleFonts",
@@ -88,13 +88,13 @@ const config: QuartzConfig = {
       Plugin.Assets(),
       Plugin.Static(),
       Plugin.NotFoundPage(),
-      Plugin.CustomOgImages({
-        colorScheme: "lightMode",
-        width: 1200,
-        height: 630,
-        excludeRoot: false,
-        imageStructure: defaultImage,
-      }),
+      // Plugin.CustomOgImages({
+      //   colorScheme: "lightMode",
+      //   width: 1200,
+      //   height: 630,
+      //   excludeRoot: false,
+      //   imageStructure: defaultImage,
+      // }),
     ],
   },
 }
