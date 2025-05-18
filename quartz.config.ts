@@ -2,11 +2,6 @@ import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
 import { defaultImage } from "./quartz/util/og"
 
-/**
- * Quartz 4 Configuration
- *
- * See https://quartz.jzhao.xyz/configuration for more information.
- */
 const config: QuartzConfig = {
   configuration: {
     pageTitle: "Sumi Garden",
@@ -88,13 +83,13 @@ const config: QuartzConfig = {
       Plugin.Assets(),
       Plugin.Static(),
       Plugin.NotFoundPage(),
-      // Plugin.CustomOgImages({
-      //   colorScheme: "lightMode",
-      //   width: 1200,
-      //   height: 630,
-      //   excludeRoot: false,
-      //   imageStructure: defaultImage,
-      // }),
+      Plugin.CustomOgImages({
+        colorScheme: "lightMode",
+        width: 1200,
+        height: 630,
+        excludeRoot: false,
+        imageStructure: defaultImage,
+      }),
     ],
   },
 }
